@@ -1,0 +1,11 @@
+.App-outer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.App-inner-container {
+  flex-grow: 1;
+}
