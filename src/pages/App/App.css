@@ -1,4 +1,4 @@
-.App-outer-container {
+.outer-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,7 +11,7 @@
   margin: 0;
 }
 
-.App-inner-container {
+.inner-container {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;

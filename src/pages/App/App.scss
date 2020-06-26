@@ -1,4 +1,4 @@
-.App-outer-container {
+.outer-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -6,6 +6,6 @@
   margin: 0;
 }
 
-.App-inner-container {
+.inner-container {
   flex-grow: 1;
 }
