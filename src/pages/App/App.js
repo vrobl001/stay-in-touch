@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import userService from '../../utils/userService';
 import './App.css';
 
 // Reusable Components
@@ -17,11 +18,24 @@ import PhotoBlog from '../PhotoBlog/PhotoBlog';
 import Signup from '../Signup/Signup';
 
 class App extends Component {
-  state = {};
+  state = {
+    user: userService.getUser(),
+  };
+
+  handleSignupOrLogin = () => {
+    this.setState({ user: userService.getUser() });
+  };
+  handleLogout = () => {
+    userService.logout();
+    this.setState({
+      user: userService.getUser(),
+    });
+  };
+
   render() {
     return (
       <div className='app-outer-container'>
-        <Navbar />
+        <Navbar handleLogout={this.handleLogout} />
         <div className='app-inner-container'>
           <Switch>
             <Route exact path='/' render={(props) => <Home />} />
@@ -41,9 +55,27 @@ class App extends Component {
               path='/grocerylist'
               render={(props) => <GroceryList />}
             />
-            <Route exact path='/login' render={(props) => <Login />} />
+            <Route
+              exact
+              path='/login'
+              render={(props) => (
+                <Login
+                  {...props}
+                  handleSignupOrLogin={this.handleSignupOrLogin}
+                />
+              )}
+            />
             <Route exact path='/photoblog' render={(props) => <PhotoBlog />} />
-            <Route exact path='/signup' render={(props) => <Signup />} />
+            <Route
+              exact
+              path='/signup'
+              render={(props) => (
+                <Signup
+                  {...props}
+                  handleSignupOrLogin={this.handleSignupOrLogin}
+                />
+              )}
+            />
           </Switch>
         </div>
         <Footer />
