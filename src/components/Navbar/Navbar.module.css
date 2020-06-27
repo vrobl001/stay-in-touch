@@ -22,11 +22,11 @@
   text-decoration: none;
 }
 
-.navbar a {
+.navbar a h1 {
   font-family: 'Marcellus SC', serif;
 }
 
-.navbar li {
+.navbar a li {
   font-family: 'Open Sans', sans-serif;
   margin: 0 1rem;
 }
