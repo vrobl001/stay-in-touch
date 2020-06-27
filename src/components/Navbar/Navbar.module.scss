@@ -1,5 +1,33 @@
+$colors: (
+  dark-gray: #262526,
+  dark-green: #1a484e,
+  green: #42d8d4,
+  white: #ffffff,
+  yellow: #faf898,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
 .navbar {
+  background-color: color(dark-gray);
+  display: flex;
+  justify-content: space-between;
+  a,
+  ul {
+    align-items: center;
+    color: color(green);
     display: flex;
-    justify-content: space-between;
-    background-color: blue;
+    list-style: none;
+    padding: 0 1rem;
+    text-decoration: none;
+  }
+  a {
+    font-family: 'Marcellus SC', serif;
+  }
+  li {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 1rem;
+  }
 }

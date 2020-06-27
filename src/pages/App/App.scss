@@ -1,4 +1,16 @@
-.outer-container {
+$colors: (
+  white: #ffffff,
+  dark-gray: #262526,
+  green: #42d8d4,
+  dark-green: #1a484e,
+  yellow: #faf898,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+.app-outer-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -6,6 +18,6 @@
   margin: 0;
 }
 
-.inner-container {
+.app-inner-container {
   flex-grow: 1;
 }

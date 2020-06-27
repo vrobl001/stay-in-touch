@@ -1,6 +1,25 @@
+$colors: (
+  dark-gray: #262526,
+  dark-green: #1a484e,
+  green: #42d8d4,
+  white: #ffffff,
+  yellow: #faf898,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
 .footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: blue;
+  align-items: center;
+  background-color: color(dark-gray);
+  color: color(green);
+  display: flex;
+  justify-content: center;
+  p {
+    font-family: 'Open Sans', sans-serif;
+  }
+  span {
+    font-family: 'Marcellus SC', serif;
+  }
 }
