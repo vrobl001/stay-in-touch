@@ -13,7 +13,9 @@ const Navbar = (props) => {
         <li>
           <Link to='/login'>Login</Link>
         </li>
-        <li>Logout</li>
+        <li>
+          <Link to='/'>Logout</Link>
+        </li>
       </ul>
     </nav>
   );
