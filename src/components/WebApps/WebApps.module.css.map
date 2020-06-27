@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EAChB,gBAAgB,EAAE,IAAI;EACtB,MAAM,EAAE,IAAI;CACb",
+    "sources": [
+        "WebApps.module.scss"
+    ],
+    "names": [],
+    "file": "WebApps.module.css"
+}
