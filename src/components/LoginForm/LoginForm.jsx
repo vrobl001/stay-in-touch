@@ -44,15 +44,11 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <section className={styles.section}>
+      <div>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.handleSubmit}>
           <fieldset>
-            {!this.isFormValid() ? (
-              <legend>Login</legend>
-            ) : (
-              <legend className={styles.isValid}>Login</legend>
-            )}
+            <legend>Login</legend>
 
             <label htmlFor='email'>Email</label>
             <input
@@ -77,7 +73,7 @@ class LoginForm extends Component {
             </button>
           </fieldset>
         </form>
-      </section>
+      </div>
     );
   }
 }
