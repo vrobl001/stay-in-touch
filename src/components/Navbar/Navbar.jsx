@@ -11,10 +11,15 @@ const Navbar = (props) => {
       <ul>
         <li>Welcome User!</li>
         <li>
+          <Link to='signup'>Signup</Link>
+        </li>
+        <li>
           <Link to='/login'>Login</Link>
         </li>
         <li>
-          <Link to='/'>Logout</Link>
+          <Link to='/' onClick={props.handleLogout}>
+            Logout
+          </Link>
         </li>
       </ul>
     </nav>
