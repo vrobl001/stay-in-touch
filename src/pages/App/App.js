@@ -11,10 +11,10 @@ import Footer from '../../components/Footer/Footer';
 import Home from '../Home/Home';
 import AddressBook from '../AddressBook/AddressBook';
 import Calendar from '../Calendar/Calendar';
-import ChatMessages from '../ChatMessages/ChatMessages';
+import Chat from '../Chat/Chat';
 import GroceryList from '../GroceryList/GroceryList';
 import Login from '../Login/Login';
-import PhotoBlog from '../PhotoBlog/PhotoBlog';
+import Photos from '../Photos/Photos';
 import Signup from '../Signup/Signup';
 
 class App extends Component {
@@ -45,11 +45,7 @@ class App extends Component {
               render={(props) => <AddressBook />}
             />
             <Route exact path='/calendar' render={(props) => <Calendar />} />
-            <Route
-              exact
-              path='/chatmessages'
-              render={(props) => <ChatMessages />}
-            />
+            <Route exact path='/chat' render={(props) => <Chat />} />
             <Route
               exact
               path='/grocerylist'
@@ -65,7 +61,7 @@ class App extends Component {
                 />
               )}
             />
-            <Route exact path='/photoblog' render={(props) => <PhotoBlog />} />
+            <Route exact path='/photos' render={(props) => <Photos />} />
             <Route
               exact
               path='/signup'

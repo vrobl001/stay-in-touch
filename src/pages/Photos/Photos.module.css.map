@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "PhotoBlog.module.scss"
+        "Photos.module.scss"
     ],
     "names": [],
-    "file": "PhotoBlog.module.css"
+    "file": "Photos.module.css"
 }
