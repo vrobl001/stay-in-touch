@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "ChatMessages.module.scss"
+    ],
+    "names": [],
+    "file": "ChatMessages.module.css"
+}
