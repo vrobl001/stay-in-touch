@@ -10,7 +10,9 @@ const Navbar = (props) => {
       </Link>
       <ul>
         <li>Welcome User!</li>
-        <li>Login</li>
+        <li>
+          <Link to='/login'>Login</Link>
+        </li>
         <li>Logout</li>
       </ul>
     </nav>
