@@ -26,7 +26,9 @@ const Navbar = (props) => {
   return (
     <nav className={styles.navbar}>
       <Link to='/'>
-        <h1>Stay In Touch</h1>
+        <h1>
+          <i class='material-icons'>apps</i>Stay In Touch
+        </h1>
       </Link>
       <ul>{conditionalUI}</ul>
     </nav>
