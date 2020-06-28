@@ -20,15 +20,18 @@ $colors: (
   display: flex;
   flex-direction: column;
   height: 100%;
+
   ul {
     height: 100%;
     list-style: none;
     padding: 0;
+
     li {
       align-items: center;
       display: flex;
       font-family: 'Poppins', sans-serif;
       margin: 1rem 0;
+
       i {
         margin-right: 0.5rem;
       }
