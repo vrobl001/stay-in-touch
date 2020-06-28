@@ -25,15 +25,19 @@
   text-decoration: none;
 }
 
-.navbar ul {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
+.navbar p {
+  margin-right: 0.5rem;
 }
 
 .navbar span {
   color: #0052cc;
   margin-left: 0.25rem;
+}
+
+.navbar ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar .logo {

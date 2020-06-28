@@ -32,15 +32,19 @@ $colors: (
     text-decoration: none;
   }
 
-  ul {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
+  p {
+    margin-right: 0.5rem;
   }
 
   span {
     color: color(dark-blue);
     margin-left: 0.25rem;
+  }
+
+  ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
   }
 
   .logo {

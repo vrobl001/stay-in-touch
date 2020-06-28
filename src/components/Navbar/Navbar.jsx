@@ -6,7 +6,9 @@ import styles from './Navbar.module.css';
 const Navbar = (props) => {
   const conditionalUI = userService.getUser() ? (
     <div className={styles.rightNav}>
-      Welcome <span>{props.user.name}</span>!
+      <p>
+        Welcome <span>{props.user.name}</span>!
+      </p>
       <li>
         <Link to='/' onClick={props.handleLogout}>
           Logout
