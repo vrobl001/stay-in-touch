@@ -23,6 +23,7 @@ $colors: (
   display: flex;
   justify-content: space-between;
   z-index: 1;
+
   a,
   ul {
     align-items: center;
@@ -31,10 +32,21 @@ $colors: (
     padding: 0 1rem;
     text-decoration: none;
   }
+
   a h1 {
+    align-items: center;
     color: color(blue);
+    display: flex;
     font-family: 'Marcellus SC', serif;
   }
+
+  i {
+    border: 1px solid color(gray);
+    border-radius: 0.25rem;
+    font-size: 2.25rem;
+    margin-right: 0.5rem;
+  }
+
   li {
     color: color(dark-gray);
     font-family: 'Poppins', sans-serif;
