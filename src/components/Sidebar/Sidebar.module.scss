@@ -26,14 +26,28 @@ $colors: (
     list-style: none;
     padding: 0;
 
-    li {
+    a,
+    a:visited {
       align-items: center;
+      color: color(dark-gray);
       display: flex;
+      flex-grow: 1;
       font-family: 'Poppins', sans-serif;
-      margin: 1rem 0;
-
+      height: 4rem;
+      padding-left: 1rem;
+      text-decoration: none;
+      width: 10rem;
       i {
+        color: black;
         margin-right: 0.5rem;
+      }
+    }
+
+    a:focus {
+      background-color: rgba(66, 82, 110, 0.2);
+      color: color(dark-blue);
+      i {
+        color: color(dark-blue);
       }
     }
   }

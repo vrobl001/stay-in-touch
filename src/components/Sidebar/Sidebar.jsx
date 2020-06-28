@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 
 const Sidebar = (props) => {
@@ -7,19 +7,29 @@ const Sidebar = (props) => {
     <nav className={styles.sidebarContainer}>
       <ul>
         <li>
-          <i class='small material-icons'>contacts</i> Address Book
+          <Link to='/addressbook'>
+            <i class='material-icons'>contacts</i> Address Book
+          </Link>
         </li>
         <li>
-          <i class='small material-icons'>event</i> Calendar
+          <Link to='/calendar'>
+            <i class='material-icons'>event</i> Calendar
+          </Link>
         </li>
         <li>
-          <i class='small material-icons'>chat</i> Chat
+          <Link to='/chat'>
+            <i class='material-icons'>chat</i> Chat
+          </Link>
         </li>
         <li>
-          <i class='small material-icons'>restaurant</i> Grocery List
+          <Link to='/grocerylist'>
+            <i class='material-icons'>restaurant</i> Grocery List
+          </Link>
         </li>
         <li>
-          <i class='small material-icons'>camera_alt</i> Photos
+          <Link to='photos'>
+            <i class='material-icons'>camera_alt</i> Photos
+          </Link>
         </li>
       </ul>
     </nav>
