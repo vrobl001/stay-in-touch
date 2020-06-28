@@ -24,22 +24,24 @@ $colors: (
   justify-content: center;
   margin: 0 auto;
   width: 52rem;
+
   a {
     text-decoration: none;
   }
+
   a:visited {
     color: color(dark-blue);
   }
-}
 
-.webApps {
-  align-items: center;
-  display: flex;
-  border: $border;
-  border-radius: 0.25rem;
-  box-shadow: $box-shadow;
-  height: 7.5rem;
-  justify-content: center;
-  margin: 1rem;
-  width: 15rem;
+  .webApps {
+    align-items: center;
+    display: flex;
+    border: $border;
+    border-radius: 0.25rem;
+    box-shadow: $box-shadow;
+    height: 7.5rem;
+    justify-content: center;
+    margin: 1rem;
+    width: 15rem;
+  }
 }
