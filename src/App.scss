@@ -1,9 +1,12 @@
 $colors: (
-  white: #ffffff,
-  dark-gray: #262526,
-  green: #42d8d4,
-  dark-green: #1a484e,
-  yellow: #faf898,
+  blue: rgb(68, 126, 215),
+  dark-blue: rgb(0, 82, 204),
+  dark-gray: rgb(66, 82, 110),
+  gray: rgb(235, 236, 240),
+  green: rgb(0, 135, 90),
+  light-gray: rgb(244, 245, 247),
+  purple: rgb(82, 68, 171),
+  white: rgb(255, 255, 255),
 );
 
 @function color($color-name) {
@@ -14,10 +17,16 @@ $colors: (
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .app-inner-container {
+  display: flex;
   flex-grow: 1;
+}
+
+.sidebar-container {
+  height: 100%;
+  width: 10rem;
 }

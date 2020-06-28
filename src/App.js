@@ -5,6 +5,7 @@ import styles from './App.css';
 
 // Reusable Components
 import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 
 // Page Components
@@ -37,6 +38,9 @@ class App extends Component {
       <div className={'app-outer-container'}>
         <Navbar user={this.state.user} handleLogout={this.handleLogout} />
         <div className='app-inner-container'>
+          <div className='sidebar-container'>
+            <Sidebar />
+          </div>
           <Switch>
             <Route exact path='/' render={(props) => <Home />} />
             <Route
