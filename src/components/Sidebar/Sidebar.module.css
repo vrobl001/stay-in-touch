@@ -1,0 +1,38 @@
+.sidebarContainer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ebecf0;
+  -webkit-box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
+          box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.sidebarContainer ul {
+  height: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.sidebarContainer ul li {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  margin: 1rem 0;
+}
+
+.sidebarContainer ul li i {
+  margin-right: 0.25rem;
+}
+/*# sourceMappingURL=Sidebar.module.css.map */
