@@ -1,5 +1,4 @@
 $box-shadow: 0rem 0.1rem 0.25rem 0rem rgb(66, 82, 110);
-$border: 1px solid rgb(66, 82, 110);
 
 $colors: (
   blue: rgb(68, 126, 215),
@@ -27,29 +26,61 @@ $colors: (
   a,
   ul {
     align-items: center;
+    color: color(dark-gray);
     display: flex;
-    list-style: none;
-    padding: 0 1rem;
+    font-family: 'Poppins', sans-serif;
     text-decoration: none;
   }
 
-  a h1 {
+  ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  span {
+    color: color(dark-blue);
+    margin-left: 0.25rem;
+  }
+
+  .logo {
     align-items: center;
-    color: color(blue);
     display: flex;
-    font-family: 'Marcellus SC', serif;
+
+    a {
+      align-items: center;
+      color: color(blue);
+      display: flex;
+      font-family: 'Marcellus SC', serif;
+      padding: 0;
+    }
+
+    i {
+      align-items: center;
+      display: flex;
+      font-size: 2rem;
+      height: 2.5rem;
+      justify-content: center;
+      margin: 0 0.75rem;
+      width: 2.5rem;
+    }
   }
 
-  i {
-    border: 1px solid color(gray);
-    border-radius: 0.25rem;
-    font-size: 2.25rem;
-    margin-right: 0.5rem;
-  }
-
-  li {
-    color: color(dark-gray);
-    font-family: 'Poppins', sans-serif;
-    margin: 0 1rem;
+  .rightNav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    a {
+      margin: 0;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 1rem;
+    }
+    li:hover {
+      background-color: color(light-gray);
+    }
   }
 }
