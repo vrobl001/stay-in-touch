@@ -1,9 +1,12 @@
 $colors: (
-  dark-gray: #262526,
-  dark-green: #1a484e,
-  green: #42d8d4,
-  white: #ffffff,
-  yellow: #faf898,
+  blue: rgb(68, 126, 215),
+  dark-blue: rgb(0, 82, 204),
+  dark-gray: rgb(66, 82, 110),
+  gray: rgb(235, 236, 240),
+  green: rgb(0, 135, 90),
+  light-gray: rgb(244, 245, 247),
+  purple: rgb(82, 68, 171),
+  white: rgb(255, 255, 255),
 );
 
 @function color($color-name) {
@@ -12,12 +15,13 @@ $colors: (
 
 .footer {
   align-items: center;
-  background-color: color(dark-gray);
-  color: color(green);
+  background-color: color(white);
+  border-top: 1px solid color(light-gray);
+  color: color(dark-gray);
   display: flex;
   justify-content: center;
   p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
   span {
     font-family: 'Marcellus SC', serif;

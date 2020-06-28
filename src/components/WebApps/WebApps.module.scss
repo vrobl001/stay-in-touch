@@ -1,4 +1,45 @@
+$box-shadow: 0rem 0.1rem 0.25rem 0rem rgb(66, 82, 110);
+$border: 1px solid rgb(66, 82, 110);
+
+$colors: (
+  blue: rgb(68, 126, 215),
+  dark-blue: rgb(0, 82, 204),
+  dark-gray: rgb(66, 82, 110),
+  gray: rgb(235, 236, 240),
+  green: rgb(0, 135, 90),
+  light-gray: rgb(244, 245, 247),
+  purple: rgb(82, 68, 171),
+  white: rgb(255, 255, 255),
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
 .webAppsContainer {
-  background-color: blue;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  width: 52rem;
+  a {
+    text-decoration: none;
+  }
+  a:visited {
+    color: color(dark-blue);
+  }
+}
+
+.webApps {
+  align-items: center;
+  display: flex;
+  border: $border;
+  border-radius: 0.5rem;
+  box-shadow: $box-shadow;
+  height: 7.5rem;
+  justify-content: center;
   margin: 1rem;
+  width: 15rem;
 }

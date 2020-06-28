@@ -1,9 +1,15 @@
+$box-shadow: 0rem 0.1rem 0.25rem 0rem rgb(66, 82, 110);
+$border: 1px solid rgb(66, 82, 110);
+
 $colors: (
-  dark-gray: #262526,
-  dark-green: #1a484e,
-  green: #42d8d4,
-  white: #ffffff,
-  yellow: #faf898,
+  blue: rgb(68, 126, 215),
+  dark-blue: rgb(0, 82, 204),
+  dark-gray: rgb(66, 82, 110),
+  gray: rgb(235, 236, 240),
+  green: rgb(0, 135, 90),
+  light-gray: rgb(244, 245, 247),
+  purple: rgb(82, 68, 171),
+  white: rgb(255, 255, 255),
 );
 
 @function color($color-name) {
@@ -11,22 +17,25 @@ $colors: (
 }
 
 .navbar {
-  background-color: color(dark-gray);
+  background-color: color(white);
+  border-bottom: 1px solid color(light-gray);
+  box-shadow: $box-shadow;
   display: flex;
   justify-content: space-between;
   a,
   ul {
     align-items: center;
-    color: color(green);
     display: flex;
     list-style: none;
     padding: 0 1rem;
     text-decoration: none;
   }
   a h1 {
+    color: color(blue);
     font-family: 'Marcellus SC', serif;
   }
   li {
+    color: color(dark-gray);
     font-family: 'Poppins', sans-serif;
     margin: 0 1rem;
   }

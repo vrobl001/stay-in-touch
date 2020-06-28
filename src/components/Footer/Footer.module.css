@@ -2,8 +2,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #262526;
-  color: #42d8d4;
+  background-color: white;
+  border-top: 1px solid #f4f5f7;
+  color: #42526e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,7 +14,7 @@
 }
 
 .footer p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer span {

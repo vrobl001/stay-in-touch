@@ -27,13 +27,13 @@ const WebApps = (props) => {
 
   const allWebApps = webApps.map((app, idx) => (
     <a href={app.link}>
-      <div className={styles.webAppsContainer} key={idx}>
+      <div className={styles.webApps} key={idx}>
         <p>{app.name}</p>
       </div>
     </a>
   ));
 
-  return <div>{allWebApps}</div>;
+  return <div className={styles.webAppsContainer}>{allWebApps}</div>;
 };
 
 export default WebApps;

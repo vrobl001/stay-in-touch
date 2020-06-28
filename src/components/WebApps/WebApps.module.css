@@ -1,5 +1,44 @@
 .webAppsContainer {
-  background-color: blue;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  width: 52rem;
+}
+
+.webAppsContainer a {
+  text-decoration: none;
+}
+
+.webAppsContainer a:visited {
+  color: #0052cc;
+}
+
+.webApps {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #42526e;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
+          box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
+  height: 7.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 1rem;
+  width: 15rem;
 }
 /*# sourceMappingURL=WebApps.module.css.map */
