@@ -19,13 +19,11 @@ $colors: (
   height: 100vh;
   margin: 0;
   padding: 0;
+  .app-inner-container {
+    display: flex;
+    flex-grow: 1;
+  }
 }
-
-.app-inner-container {
-  display: flex;
-  flex-grow: 1;
-}
-
 .sidebar-container {
   height: 100%;
   width: 10rem;
