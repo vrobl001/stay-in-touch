@@ -21,11 +21,39 @@ import Signup from './pages/Signup/Signup';
 class App extends Component {
   state = {
     user: userService.getUser(),
+    webApps: [
+      {
+        name: 'Address Book',
+        link: '/addressbook',
+        icon: 'contacts',
+      },
+      {
+        name: 'Calendar',
+        link: '/calendar',
+        icon: 'event',
+      },
+      {
+        name: 'Chat',
+        link: '/chat',
+        icon: 'chat',
+      },
+      {
+        name: 'Grocery List',
+        link: '/grocerylist',
+        icon: 'restaurant',
+      },
+      {
+        name: 'Photos',
+        link: '/photos',
+        icon: 'camera_alt',
+      },
+    ],
   };
 
   handleSignupOrLogin = () => {
     this.setState({ user: userService.getUser() });
   };
+
   handleLogout = () => {
     userService.logout();
     this.setState({
@@ -39,22 +67,18 @@ class App extends Component {
         <Navbar user={this.state.user} handleLogout={this.handleLogout} />
         <div className='app-inner-container'>
           <div className='sidebar-container'>
-            <Sidebar />
+            <Sidebar webApps={this.state.webApps} />
           </div>
           <Switch>
-            <Route exact path='/' render={(props) => <Home />} />
             <Route
               exact
-              path='/addressbook'
-              render={(props) => <AddressBook />}
+              path='/'
+              render={() => <Home webApps={this.state.webApps} />}
             />
-            <Route exact path='/calendar' render={(props) => <Calendar />} />
-            <Route exact path='/chat' render={(props) => <Chat />} />
-            <Route
-              exact
-              path='/grocerylist'
-              render={(props) => <GroceryList />}
-            />
+            <Route exact path='/addressbook' render={() => <AddressBook />} />
+            <Route exact path='/calendar' render={() => <Calendar />} />
+            <Route exact path='/chat' render={() => <Chat />} />
+            <Route exact path='/grocerylist' render={() => <GroceryList />} />
             <Route
               exact
               path='/login'
