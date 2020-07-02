@@ -28,7 +28,7 @@ const Navbar = (props) => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        <i class='material-icons'>apps</i>
+        <i className='material-icons'>apps</i>
         <Link to='/'>
           <h1>Stay In Touch</h1>
         </Link>
