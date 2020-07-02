@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,qBAAqB,CAAC;EACpB,MAAM,EAAE,eAAe;CACxB",
     "sources": [
         "SendMessages.module.scss"
     ],

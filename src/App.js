@@ -106,12 +106,7 @@ class App extends Component {
             <Route
               exact
               path='/chat'
-              render={() => (
-                <Chat
-                  messages={this.state.messages}
-                  handleUpdateMessages={this.handleUpdateMessages}
-                />
-              )}
+              render={() => <Chat messages={this.state.messages} />}
             />
             <Route exact path='/grocerylist' render={() => <GroceryList />} />
             <Route
