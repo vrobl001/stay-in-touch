@@ -8,7 +8,7 @@ const Chat = (props) => {
     <div className='chatContainer'>
       <div className='messengerContainer'>
         <RetrieveMessages messages={props.messages} />
-        <SendMessages />
+        <SendMessages user={props.user} />
       </div>
     </div>
   );
