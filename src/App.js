@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import messageService from './utils/messageService';
 import userService from './utils/userService';
-import styles from './App.css';
+import './App.css';
 
 // Reusable Components
 import Navbar from './components/Navbar/Navbar';
@@ -18,8 +19,13 @@ import Login from './pages/Login/Login';
 import Photos from './pages/Photos/Photos';
 import Signup from './pages/Signup/Signup';
 
+// Socket.io
+import openSocket from 'socket.io-client';
+const socket = openSocket();
+
 class App extends Component {
   state = {
+    messages: [],
     user: userService.getUser(),
     webApps: [
       {
@@ -50,8 +56,11 @@ class App extends Component {
     ],
   };
 
-  handleSignupOrLogin = () => {
-    this.setState({ user: userService.getUser() });
+  handleGetMessages = async () => {
+    if (userService.getUser()) {
+      const allMessages = await messageService.retrieveMessages();
+      this.setState({ messages: allMessages });
+    }
   };
 
   handleLogout = () => {
@@ -60,6 +69,23 @@ class App extends Component {
       user: userService.getUser(),
     });
   };
+
+  handleSignupOrLogin = () => {
+    this.setState({ user: userService.getUser() });
+  };
+
+  handleUpdateMessages = (message) => {
+    const messagesCopy = [...this.state.messages, message];
+    this.setState({ messages: messagesCopy });
+  };
+
+  componentDidMount() {
+    this.handleGetMessages();
+
+    socket.on('sendMessages', (message) => {
+      this.handleUpdateMessages(message);
+    });
+  }
 
   render() {
     return (
@@ -77,7 +103,16 @@ class App extends Component {
             />
             <Route exact path='/addressbook' render={() => <AddressBook />} />
             <Route exact path='/calendar' render={() => <Calendar />} />
-            <Route exact path='/chat' render={() => <Chat />} />
+            <Route
+              exact
+              path='/chat'
+              render={() => (
+                <Chat
+                  messages={this.state.messages}
+                  handleUpdateMessages={this.handleUpdateMessages}
+                />
+              )}
+            />
             <Route exact path='/grocerylist' render={() => <GroceryList />} />
             <Route
               exact
