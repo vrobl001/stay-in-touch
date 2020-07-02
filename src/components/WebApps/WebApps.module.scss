@@ -37,11 +37,14 @@ $colors: (
     align-items: center;
     display: flex;
     border: $border;
-    border-radius: 0.25rem;
     box-shadow: $box-shadow;
     height: 7.5rem;
     justify-content: center;
     margin: 1rem;
     width: 15rem;
+
+    p {
+      margin-left: 0.5rem;
+    }
   }
 }

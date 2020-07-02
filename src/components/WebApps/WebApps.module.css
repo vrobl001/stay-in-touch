@@ -31,7 +31,6 @@
   display: -ms-flexbox;
   display: flex;
   border: 1px solid #42526e;
-  border-radius: 0.25rem;
   -webkit-box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
           box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
   height: 7.5rem;
@@ -40,5 +39,9 @@
           justify-content: center;
   margin: 1rem;
   width: 15rem;
+}
+
+.webAppsContainer .webApps p {
+  margin-left: 0.5rem;
 }
 /*# sourceMappingURL=WebApps.module.css.map */
