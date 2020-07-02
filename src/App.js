@@ -106,7 +106,9 @@ class App extends Component {
             <Route
               exact
               path='/chat'
-              render={() => <Chat messages={this.state.messages} />}
+              render={() => (
+                <Chat messages={this.state.messages} user={this.state.user} />
+              )}
             />
             <Route exact path='/grocerylist' render={() => <GroceryList />} />
             <Route
