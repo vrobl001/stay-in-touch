@@ -4,7 +4,6 @@ import SendMessages from '../../components/Messenger/SendMessages/SendMessages';
 import styles from './Chat.module.css';
 
 const Chat = (props) => {
-  console.log('chat props ', props);
   return (
     <div className='chatContainer'>
       <div className='messengerContainer'>
