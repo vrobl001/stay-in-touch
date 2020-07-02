@@ -5,7 +5,7 @@ import WebApps from '../../components/WebApps/WebApps';
 const Home = (props) => {
   return (
     <div className={styles.homeContainer}>
-      <WebApps />
+      <WebApps {...props} />
     </div>
   );
 };
