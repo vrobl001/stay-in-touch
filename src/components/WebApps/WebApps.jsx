@@ -2,32 +2,10 @@ import React from 'react';
 import styles from './WebApps.module.css';
 
 const WebApps = (props) => {
-  const webApps = [
-    {
-      name: 'Address Book',
-      link: '/addressbook',
-    },
-    {
-      name: 'Calendar',
-      link: '/calendar',
-    },
-    {
-      name: 'Chat',
-      link: '/chat',
-    },
-    {
-      name: 'Grocery List',
-      link: '/grocerylist',
-    },
-    {
-      name: 'Photos',
-      link: '/photos',
-    },
-  ];
-
-  const allWebApps = webApps.map((app, idx) => (
-    <a href={app.link}>
-      <div className={styles.webApps} key={idx}>
+  const allWebApps = props.webApps.map((app, idx) => (
+    <a href={app.link} key={idx}>
+      <div className={styles.webApps}>
+        <i className='material-icons'>{app.icon}</i>
         <p>{app.name}</p>
       </div>
     </a>
