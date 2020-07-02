@@ -9,7 +9,7 @@ class SendMessages extends Component {
 
   getInitialState() {
     return {
-      name: 'Vincent',
+      name: this.props.user.name,
       msg: '',
     };
   }
@@ -30,7 +30,7 @@ class SendMessages extends Component {
       this.setState(this.getInitialState);
     } catch (error) {
       this.setState({
-        name: 'Vincent',
+        name: this.props.user.name,
         msg: '',
       });
     }
