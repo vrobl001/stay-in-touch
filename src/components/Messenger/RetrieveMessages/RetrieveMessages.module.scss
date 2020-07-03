@@ -43,6 +43,7 @@
 
       .userMessage {
         background: rgba(68, 126, 215, 0.5);
+        box-shadow: -0.1rem 0.1rem 0.1rem 0rem rgba(66, 82, 110, 0.8);
         text-align: right;
       }
 
@@ -57,7 +58,6 @@
       display: flex;
       flex-direction: column;
       margin-right: auto;
-
       h5 {
         color: rgba(66, 82, 110, 0.9);
         font-family: 'Poppins', sans-serif;
@@ -66,6 +66,7 @@
 
       .message {
         background: rgba(82, 68, 171, 0.5);
+        box-shadow: 0.1rem 0.1rem 0.1rem 0rem rgba(66, 82, 110, 0.8);
       }
 
       .message:after {
@@ -75,4 +76,25 @@
       }
     }
   }
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 0.25rem rgba(66, 82, 110, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(66, 82, 110, 0.25);
+  border-radius: 0.5rem;
+  box-shadow: inset 0.1rem 0.1rem 0.2rem rgb(66, 82, 110);
+  size: 0.75rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(66, 82, 110, 0.5);
+  box-shadow: inset 0.1rem 0.1rem 0.2rem rgb(66, 82, 110);
 }
