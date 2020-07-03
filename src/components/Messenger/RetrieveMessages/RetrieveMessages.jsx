@@ -11,13 +11,19 @@ const RetrieveMessages = (props) => {
         </div>
       </div>
     ) : (
-      <div className={styles.message} key={idx}>
-        <p>{message.name}</p>
-        <p>{message.msg}</p>
+      <div className={styles.messageContainer}>
+        <div className={styles.message} key={idx}>
+          <p>{message.name}</p>
+          <p>{message.msg}</p>
+        </div>
       </div>
     )
   );
-  return <div className={styles.retrieveMessageContainer}>{messages}</div>;
+  return (
+    <div className={styles.retrieveMessageOuterContainer}>
+      <div className={styles.retrieveMessageInnerContainer}>{messages}</div>
+    </div>
+  );
 };
 
 export default RetrieveMessages;
