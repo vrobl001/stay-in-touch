@@ -1,4 +1,18 @@
-.retrieveMessageContainer {
+.retrieveMessageOuterContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  height: 40rem;
+  margin: auto;
+  overflow-y: auto;
+  padding: 0 2.25rem;
+}
+
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6,58 +20,62 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 40rem;
-  margin: auto;
-  overflow-y: auto;
-  padding: 0 2.25rem;
 }
 
-.userMessageContainer {
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer .userMessage,
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer .message {
+  -webkit-box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
+          box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
+  margin: 1rem;
+  max-width: 20rem;
+  min-width: 10rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer .userMessage:after,
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer .message:after {
+  content: '';
+  display: block;
+  border-style: solid;
+  position: absolute;
+  top: 2.25rem;
+  z-index: 1;
+}
+
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer .userMessageContainer,
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer .messageContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem;
+}
+
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer .userMessageContainer {
   margin-left: auto;
 }
 
-.userMessageContainer .userMessage {
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer .userMessageContainer .userMessage {
   background: #cf586c;
-  -webkit-box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
-          box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
-  margin: 1rem;
-  padding: 0.5rem 1rem;
-  position: relative;
-  width: 16rem;
 }
 
-.userMessageContainer .userMessage:after {
-  content: '';
-  display: block;
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer .userMessageContainer .userMessage:after {
   border-color: transparent #cf586c;
-  border-style: solid;
   border-width: 1rem 0 1rem 1rem;
-  position: absolute;
   right: -1rem;
-  top: 2.25rem;
-  z-index: 1;
 }
 
-.message {
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer .messageContainer {
+  margin-right: auto;
+}
+
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer .messageContainer .message {
   background: #7658cf;
-  -webkit-box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
-          box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
-  margin: 1rem;
-  padding: 0.5rem 1rem;
-  position: relative;
-  width: 16rem;
 }
 
-.message:after {
-  content: '';
-  display: block;
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer .messageContainer .message:after {
   border-color: transparent #7658cf;
-  border-style: solid;
   border-width: 1rem 1rem 1rem 0;
   left: -1rem;
-  position: absolute;
-  top: 2.25rem;
-  width: 0;
-  z-index: 1;
 }
 /*# sourceMappingURL=RetrieveMessages.module.css.map */
