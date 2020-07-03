@@ -9,7 +9,7 @@
   height: 40rem;
   margin: auto;
   overflow-y: auto;
-  padding: 0 2.25rem;
+  padding: 0 1rem;
 }
 
 .retrieveMessageOuterContainer .retrieveMessageInnerContainer {
@@ -24,23 +24,31 @@
 
 .retrieveMessageOuterContainer .retrieveMessageInnerContainer .userMessage,
 .retrieveMessageOuterContainer .retrieveMessageInnerContainer .message {
-  -webkit-box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
-          box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
-  margin: 1rem;
+  border-radius: 0.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 5.5rem;
   max-width: 20rem;
   min-width: 10rem;
-  padding: 0.5rem 1rem;
+  padding: 0rem 1.5rem;
   position: relative;
 }
 
 .retrieveMessageOuterContainer .retrieveMessageInnerContainer .userMessage:after,
 .retrieveMessageOuterContainer .retrieveMessageInnerContainer .message:after {
   content: '';
-  display: block;
   border-style: solid;
+  display: block;
   position: absolute;
-  top: 2.25rem;
-  z-index: 1;
+  top: 1.75rem;
 }
 
 .retrieveMessageOuterContainer .retrieveMessageInnerContainer .userMessageContainer,
@@ -56,25 +64,39 @@
 }
 
 .retrieveMessageOuterContainer .retrieveMessageInnerContainer .userMessageContainer .userMessage {
-  background: #cf586c;
+  background: rgba(68, 126, 215, 0.5);
+  text-align: right;
 }
 
 .retrieveMessageOuterContainer .retrieveMessageInnerContainer .userMessageContainer .userMessage:after {
-  border-color: transparent #cf586c;
+  border-color: transparent rgba(68, 126, 215, 0.5);
   border-width: 1rem 0 1rem 1rem;
   right: -1rem;
 }
 
 .retrieveMessageOuterContainer .retrieveMessageInnerContainer .messageContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-right: auto;
 }
 
+.retrieveMessageOuterContainer .retrieveMessageInnerContainer .messageContainer h5 {
+  color: rgba(66, 82, 110, 0.9);
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
 .retrieveMessageOuterContainer .retrieveMessageInnerContainer .messageContainer .message {
-  background: #7658cf;
+  background: rgba(82, 68, 171, 0.5);
 }
 
 .retrieveMessageOuterContainer .retrieveMessageInnerContainer .messageContainer .message:after {
-  border-color: transparent #7658cf;
+  border-color: transparent rgba(82, 68, 171, 0.5);
   border-width: 1rem 1rem 1rem 0;
   left: -1rem;
 }

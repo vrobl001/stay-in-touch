@@ -4,16 +4,15 @@ import styles from './RetrieveMessages.module.css';
 const RetrieveMessages = (props) => {
   const messages = props.messages.map((message, idx) =>
     props.user.name === message.name ? (
-      <div className={styles.userMessageContainer}>
-        <div className={styles.userMessage} key={idx}>
-          <p>{message.name}</p>
+      <div className={styles.userMessageContainer} key={idx}>
+        <div className={styles.userMessage}>
           <p>{message.msg}</p>
         </div>
       </div>
     ) : (
-      <div className={styles.messageContainer}>
-        <div className={styles.message} key={idx}>
-          <p>{message.name}</p>
+      <div className={styles.messageContainer} key={idx}>
+        <h5>{message.name}</h5>
+        <div className={styles.message}>
           <p>{message.msg}</p>
         </div>
       </div>
