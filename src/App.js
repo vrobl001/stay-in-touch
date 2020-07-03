@@ -66,12 +66,14 @@ class App extends Component {
   handleLogout = () => {
     userService.logout();
     this.setState({
-      user: userService.getUser(),
+      messages: [],
     });
   };
 
   handleSignupOrLogin = () => {
-    this.setState({ user: userService.getUser() });
+    this.setState({ user: userService.getUser() }, () => {
+      this.handleGetMessages();
+    });
   };
 
   handleUpdateMessages = (message) => {
