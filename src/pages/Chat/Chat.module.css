@@ -1,1 +1,16 @@
-/* No CSS *//*# sourceMappingURL=Chat.module.css.map */
+.chatOuterContainer {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 2.5rem;
+}
+
+.chatInnerContainer {
+  border: 1px solid #42526e;
+  -webkit-box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
+          box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
+  margin: auto;
+  width: 70%;
+  padding: 1rem auto;
+}
+/*# sourceMappingURL=Chat.module.css.map */

@@ -51,6 +51,9 @@ class SendMessages extends Component {
             value={this.state.msg}
             onChange={this.handleChange}
           />
+          <button type='submit'>
+            <i className='material-icons'>send</i>
+          </button>
         </form>
       </div>
     );

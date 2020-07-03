@@ -5,9 +5,9 @@ import styles from './Chat.module.css';
 
 const Chat = (props) => {
   return (
-    <div className='chatContainer'>
-      <div className='messengerContainer'>
-        <RetrieveMessages messages={props.messages} />
+    <div className={styles.chatOuterContainer}>
+      <div className={styles.chatInnerContainer}>
+        <RetrieveMessages messages={props.messages} user={props.user} />
         <SendMessages user={props.user} />
       </div>
     </div>
