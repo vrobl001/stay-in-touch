@@ -5,6 +5,7 @@ const RetrieveMessages = (props) => {
   const messages = props.messages.map((message, idx) =>
     props.user.name === message.name ? (
       <div className={styles.userMessageContainer} key={idx}>
+        <h5>{message.name}</h5>
         <div className={styles.userMessage}>
           <p>{message.msg}</p>
         </div>

@@ -9,7 +9,8 @@
 }
 
 .chatInnerContainer {
-  border: 1px solid #42526e;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(66, 82, 110, 0.5);
   -webkit-box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
           box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
   margin: auto;

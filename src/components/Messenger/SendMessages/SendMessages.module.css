@@ -1,1 +1,30 @@
-/* No CSS *//*# sourceMappingURL=SendMessages.module.css.map */
+.formContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 3rem;
+}
+
+.formContainer .textArea {
+  overflow: hidden;
+  float: left;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border: none;
+  border-top: 1px solid gray;
+  resize: none;
+}
+
+.formContainer .textArea:focus {
+  outline: none;
+}
+
+.formContainer ::-webkit-resizer {
+  display: none;
+}
+/*# sourceMappingURL=SendMessages.module.css.map */

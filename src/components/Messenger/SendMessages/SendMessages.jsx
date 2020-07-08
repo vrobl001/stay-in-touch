@@ -21,18 +21,20 @@ class SendMessages extends Component {
   };
 
   handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!this.isMessageValid()) return;
-    try {
-      const { name, msg } = this.state;
-      socket.emit('sendMessages', { name, msg });
-      await messageService.sendMessages({ name, msg });
-      this.setState(this.getInitialState);
-    } catch (error) {
-      this.setState({
-        name: this.props.user.name,
-        msg: '',
-      });
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      if (!this.isMessageValid()) return;
+      try {
+        const { name, msg } = this.state;
+        socket.emit('sendMessages', { name, msg });
+        await messageService.sendMessages({ name, msg });
+        this.setState(this.getInitialState);
+      } catch (error) {
+        this.setState({
+          name: this.props.user.name,
+          msg: '',
+        });
+      }
     }
   };
 
@@ -42,18 +44,17 @@ class SendMessages extends Component {
 
   render() {
     return (
-      <div className='sendMessageContainer'>
-        <form onSubmit={this.handleSubmit}>
-          <input
+      <div className={styles.sendMessageContainer}>
+        <form className={styles.formContainer}>
+          <textarea
+            onKeyPress={this.handleSubmit}
+            className={styles.textArea}
             id='msg'
             name='msg'
             type='text'
             value={this.state.msg}
             onChange={this.handleChange}
           />
-          <button type='submit'>
-            <i className='material-icons'>send</i>
-          </button>
         </form>
       </div>
     );

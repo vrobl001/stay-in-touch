@@ -1,0 +1,24 @@
+.formContainer {
+  display: flex;
+  height: 3rem;
+  .textArea {
+    overflow: hidden;
+    float: left;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid gray;
+    resize: none;
+  }
+
+  .textArea:focus {
+    outline: none;
+  }
+
+  ::-webkit-resizer {
+    display: none;
+  }
+}
