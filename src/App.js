@@ -67,6 +67,7 @@ class App extends Component {
     userService.logout();
     this.setState({
       messages: [],
+      user: '',
     });
   };
 
