@@ -44,33 +44,30 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.loginForm}>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.handleSubmit}>
           <fieldset>
-            <legend>Login</legend>
-
-            <label htmlFor='email'>Email</label>
-            <input
-              id='email'
-              name='email'
-              type='email'
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-
-            <label htmlFor='password'>Password</label>
-            <input
-              id='password'
-              name='password'
-              type='password'
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-
-            <button disabled={!this.isFormValid()} type='submit'>
-              Login
-            </button>
+            <legend>Log in to your account</legend>
+            <div className={styles.emailFieldContainer}>
+              <label htmlFor='email'>Email</label>
+              <input id='email' name='email' type='email' value={this.state.email} onChange={this.handleChange} />
+            </div>
+            <div className={styles.passwordFieldContainer}>
+              <label htmlFor='password'>Password</label>
+              <input
+                id='password'
+                name='password'
+                type='password'
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className={styles.loginButtonContainer}>
+              <button disabled={!this.isFormValid()} type='submit'>
+                Log In
+              </button>
+            </div>
           </fieldset>
         </form>
       </div>

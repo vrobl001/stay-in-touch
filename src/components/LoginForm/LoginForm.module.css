@@ -1,1 +1,90 @@
-/* No CSS *//*# sourceMappingURL=LoginForm.module.css.map */
+.loginForm {
+  border: 1px solid rgba(66, 82, 110, 0.25);
+  border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 20rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10rem;
+  padding: 0rem 2rem;
+  position: relative;
+}
+
+.loginForm .emailFieldContainer,
+.loginForm .passwordFieldContainer,
+.loginForm button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  margin: 1rem 0rem;
+  width: 15rem;
+}
+
+.loginForm fieldset {
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+}
+
+.loginForm fieldset legend {
+  text-align: center;
+}
+
+.loginForm fieldset input {
+  border: 1px solid rgba(66, 82, 110, 0.25);
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  height: 1.5rem;
+  padding: 0.5rem;
+}
+
+.loginForm fieldset input:focus {
+  border: 1px solid #447ed7;
+  outline: none;
+}
+
+.loginForm fieldset .loginButtonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loginForm fieldset .loginButtonContainer button {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0052cc;
+  border: 1px solid rgba(66, 82, 110, 0.25);
+  border-radius: 0.25rem;
+  color: white;
+  padding: 0.5rem;
+}
+
+.loginForm fieldset .loginButtonContainer button:disabled {
+  background-color: rgba(0, 82, 204, 0.5);
+}
+
+.loginForm p {
+  color: red;
+  left: 34%;
+  position: absolute;
+  top: 6%;
+}
+/*# sourceMappingURL=LoginForm.module.css.map */

@@ -1,0 +1,71 @@
+.loginForm {
+  border: 1px solid rgba(66, 82, 110, 0.25);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  justify-content: center;
+  margin: 10rem;
+  padding: 0rem 2rem;
+  position: relative;
+
+  .emailFieldContainer,
+  .passwordFieldContainer,
+  button {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.25rem;
+    margin: 1rem 0rem;
+    width: 15rem;
+  }
+
+  fieldset {
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+
+    legend {
+      text-align: center;
+    }
+
+    input {
+      border: 1px solid rgba(66, 82, 110, 0.25);
+      border-radius: 0.25rem;
+      font-size: 0.9rem;
+      height: 1.5rem;
+      padding: 0.5rem;
+    }
+
+    input:focus {
+      border: 1px solid rgb(68, 126, 215);
+      outline: none;
+    }
+
+    .loginButtonContainer {
+      display: flex;
+      justify-content: center;
+
+      button {
+        align-items: center;
+        background-color: rgb(0, 82, 204);
+        border: 1px solid rgba(66, 82, 110, 0.25);
+        border-radius: 0.25rem;
+        color: white;
+        padding: 0.5rem;
+      }
+
+      button:disabled {
+        background-color: rgba(0, 82, 204, 0.5);
+      }
+    }
+  }
+
+  p {
+    color: red;
+    left: 34%;
+    position: absolute;
+    top: 6%;
+  }
+}
