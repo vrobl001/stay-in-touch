@@ -90,7 +90,8 @@ class App extends Component {
   }
 
   render() {
-    return (
+    return !this.state.user ? (
+      // Protected Routes
       <div className={'app-outer-container'}>
         <Navbar user={this.state.user} handleLogout={this.handleLogout} />
         <div className='app-inner-container'>
@@ -98,41 +99,69 @@ class App extends Component {
             <Sidebar webApps={this.state.webApps} />
           </div>
           <Switch>
+            <Route exact path='/' render={() => <Home webApps={this.state.webApps} />} />
             <Route
               exact
-              path='/'
-              render={() => <Home webApps={this.state.webApps} />}
+              path='/addressbook'
+              render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
             />
-            <Route exact path='/addressbook' render={() => <AddressBook />} />
-            <Route exact path='/calendar' render={() => <Calendar />} />
+            <Route
+              exact
+              path='/calendar'
+              render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
+            />
             <Route
               exact
               path='/chat'
-              render={() => (
-                <Chat messages={this.state.messages} user={this.state.user} />
-              )}
+              render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
             />
+            <Route
+              exact
+              path='/grocerylist'
+              render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
+            />
+            <Route
+              exact
+              path='/photos'
+              render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
+            />
+            <Route
+              exact
+              path='/login'
+              render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
+            />
+            <Route
+              exact
+              path='/signup'
+              render={(props) => <Signup {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
+            />
+          </Switch>
+        </div>
+        <Footer />
+      </div>
+    ) : (
+      <div className={'app-outer-container'}>
+        <Navbar user={this.state.user} handleLogout={this.handleLogout} />
+        <div className='app-inner-container'>
+          <div className='sidebar-container'>
+            <Sidebar webApps={this.state.webApps} />
+          </div>
+          <Switch>
+            <Route exact path='/' render={() => <Home webApps={this.state.webApps} />} />
+            <Route exact path='/addressbook' render={() => <AddressBook />} />
+            <Route exact path='/calendar' render={() => <Calendar />} />
+            <Route exact path='/chat' render={() => <Chat messages={this.state.messages} user={this.state.user} />} />
             <Route exact path='/grocerylist' render={() => <GroceryList />} />
             <Route
               exact
               path='/login'
-              render={(props) => (
-                <Login
-                  {...props}
-                  handleSignupOrLogin={this.handleSignupOrLogin}
-                />
-              )}
+              render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
             />
             <Route exact path='/photos' render={(props) => <Photos />} />
             <Route
               exact
               path='/signup'
-              render={(props) => (
-                <Signup
-                  {...props}
-                  handleSignupOrLogin={this.handleSignupOrLogin}
-                />
-              )}
+              render={(props) => <Signup {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
             />
           </Switch>
         </div>
