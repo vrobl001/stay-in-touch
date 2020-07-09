@@ -16,6 +16,7 @@
 }
 
 .webAppsContainer a {
+  color: #0052cc;
   text-decoration: none;
 }
 
@@ -27,21 +28,32 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: white;
+  background: linear-gradient(135deg, white 0%, #fdfdfd 20%, #f1f1f1 80%, #e1e1e1 90%, #b8b8b8 100%);
+  border: 1px solid rgba(66, 82, 110, 0.5);
+  border-radius: 50%;
+  -webkit-box-shadow: 0.2rem 0.2rem 0.1rem 0rem rgba(66, 82, 110, 0.8);
+          box-shadow: 0.2rem 0.2rem 0.1rem 0rem rgba(66, 82, 110, 0.8);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid #42526e;
-  -webkit-box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
-          box-shadow: 0rem 0.1rem 0.25rem 0rem #42526e;
-  height: 7.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 12rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin: 1rem;
-  width: 15rem;
+  width: 12rem;
+}
+
+.webAppsContainer .webApps i {
+  font-size: 3.5rem;
 }
 
 .webAppsContainer .webApps p {
-  margin-left: 0.5rem;
+  font-size: 0.9rem;
 }
 /*# sourceMappingURL=WebApps.module.css.map */
