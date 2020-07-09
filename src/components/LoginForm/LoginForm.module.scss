@@ -9,8 +9,7 @@
   padding: 0rem 2rem;
   position: relative;
 
-  .emailFieldContainer,
-  .passwordFieldContainer,
+  .inputField,
   button {
     display: flex;
     flex-direction: column;
@@ -43,7 +42,7 @@
       outline: none;
     }
 
-    .loginButtonContainer {
+    .loginButton {
       display: flex;
       justify-content: center;
 

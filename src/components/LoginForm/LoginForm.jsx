@@ -49,11 +49,13 @@ class LoginForm extends Component {
         <form onSubmit={this.handleSubmit}>
           <fieldset>
             <legend>Log in to your account</legend>
-            <div className={styles.emailFieldContainer}>
+
+            <div className={styles.inputField}>
               <label htmlFor='email'>Email</label>
               <input id='email' name='email' type='email' value={this.state.email} onChange={this.handleChange} />
             </div>
-            <div className={styles.passwordFieldContainer}>
+
+            <div className={styles.inputField}>
               <label htmlFor='password'>Password</label>
               <input
                 id='password'
@@ -63,7 +65,8 @@ class LoginForm extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <div className={styles.loginButtonContainer}>
+
+            <div className={styles.loginButton}>
               <button disabled={!this.isFormValid()} type='submit'>
                 Log In
               </button>
