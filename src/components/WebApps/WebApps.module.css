@@ -41,12 +41,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 12rem;
+  height: 11rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin: 1rem;
-  width: 12rem;
+  width: 11rem;
 }
 
 .webAppsContainer .webApps i {
