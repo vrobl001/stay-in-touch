@@ -11,7 +11,7 @@ const Navbar = (props) => {
       </p>
       <li>
         <Link to='/' onClick={props.handleLogout}>
-          Logoutzxcv
+          Log out
         </Link>
       </li>
     </div>
