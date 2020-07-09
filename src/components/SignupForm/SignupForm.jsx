@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import userService from '../../utils/userService';
 import styles from './SignupForm.module.css';
 
@@ -55,7 +56,7 @@ class SignupForm extends Component {
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.handleSubmit}>
           <fieldset>
-            <legend>Signup Form</legend>
+            <legend>Sign up</legend>
 
             <div className={styles.inputField}>
               <label htmlFor='name'>Full Name</label>
@@ -100,6 +101,7 @@ class SignupForm extends Component {
             </div>
           </fieldset>
         </form>
+        <Link to='signup'>Already have account</Link>
       </div>
     );
   }
