@@ -17,13 +17,13 @@
     font-weight: 300;
     font-size: 1.25rem;
     margin: 1rem 0rem;
-    width: 15rem;
+    width: 20rem;
   }
 
   fieldset {
     border: none;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1rem;
 
     legend {
       text-align: center;
@@ -32,14 +32,26 @@
     input {
       border: 1px solid rgba(66, 82, 110, 0.25);
       border-radius: 0.25rem;
-      font-size: 0.9rem;
+      font-size: 1rem;
       height: 1.5rem;
       padding: 0.5rem;
+      padding-left: 2.75rem;
     }
 
     input:focus {
       border: 1px solid rgb(68, 126, 215);
       outline: none;
+    }
+
+    .inputField {
+      position: relative;
+      i {
+        bottom: 0rem;
+        color: rgb(66, 82, 110);
+        left: 0.5rem;
+        position: absolute;
+        height: 2rem;
+      }
     }
 
     .loginButton {

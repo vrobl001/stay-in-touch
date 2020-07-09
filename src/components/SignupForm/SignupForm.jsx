@@ -31,7 +31,6 @@ class SignupForm extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     if (!this.isFormValid()) return;
-
     try {
       const { name, email, password } = this.state;
       await userService.signup({ name, email, password });
@@ -60,16 +59,19 @@ class SignupForm extends Component {
 
             <div className={styles.inputField}>
               <label htmlFor='name'>Full Name</label>
+              <i className='material-icons'>person</i>
               <input id='name' name='name' type='text' value={this.state.name} onChange={this.handleChange} />
             </div>
 
             <div className={styles.inputField}>
               <label htmlFor='email'>Email</label>
+              <i className='material-icons'>email</i>
               <input id='email' name='email' type='email' value={this.state.email} onChange={this.handleChange} />
             </div>
 
             <div className={styles.inputField}>
               <label htmlFor='password'>Password</label>
+              <i className='material-icons'>lock</i>
               <input
                 id='password'
                 name='password'
@@ -81,6 +83,7 @@ class SignupForm extends Component {
 
             <div className={styles.inputField}>
               <label htmlFor='passwordConf'>Password Confirmation</label>
+              <i className='material-icons'>lock</i>
               <input
                 id='passwordConf'
                 name='passwordConf'

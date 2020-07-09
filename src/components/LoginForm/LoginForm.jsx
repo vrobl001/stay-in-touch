@@ -51,12 +51,14 @@ class LoginForm extends Component {
             <legend>Log in to your account</legend>
 
             <div className={styles.inputField}>
+              <i className='material-icons'>email</i>
               <label htmlFor='email'>Email</label>
               <input id='email' name='email' type='email' value={this.state.email} onChange={this.handleChange} />
             </div>
 
             <div className={styles.inputField}>
               <label htmlFor='password'>Password</label>
+              <i className='material-icons'>lock</i>
               <input
                 id='password'
                 name='password'
