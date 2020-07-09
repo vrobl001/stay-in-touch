@@ -1,1 +1,89 @@
-/* No CSS *//*# sourceMappingURL=SignupForm.module.css.map */
+.signupForm {
+  border: 1px solid rgba(66, 82, 110, 0.25);
+  border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 30rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10rem;
+  padding: 0rem 2rem;
+  position: relative;
+}
+
+.signupForm .inputField,
+.signupForm button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  margin: 1rem 0rem;
+  width: 15rem;
+}
+
+.signupForm fieldset {
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+}
+
+.signupForm fieldset legend {
+  text-align: center;
+}
+
+.signupForm fieldset input {
+  border: 1px solid rgba(66, 82, 110, 0.25);
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  height: 1.5rem;
+  padding: 0.5rem;
+}
+
+.signupForm fieldset input:focus {
+  border: 1px solid #447ed7;
+  outline: none;
+}
+
+.signupForm fieldset .signupButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signupForm fieldset .signupButton button {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0052cc;
+  border: 1px solid rgba(66, 82, 110, 0.25);
+  border-radius: 0.25rem;
+  color: white;
+  padding: 0.5rem;
+}
+
+.signupForm fieldset .signupButton button:disabled {
+  background-color: rgba(0, 82, 204, 0.5);
+}
+
+.signupForm p {
+  color: red;
+  left: 34%;
+  position: absolute;
+  top: 6%;
+}
+/*# sourceMappingURL=SignupForm.module.css.map */

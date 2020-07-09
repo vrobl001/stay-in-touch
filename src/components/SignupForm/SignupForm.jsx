@@ -17,10 +17,7 @@ class SignupForm extends Component {
 
   isFormValid = () => {
     return (
-      this.state.name &&
-      this.state.email &&
-      this.state.password &&
-      this.state.password === this.state.passwordConf
+      this.state.name && this.state.email && this.state.password && this.state.password === this.state.passwordConf
     );
   };
 
@@ -55,57 +52,52 @@ class SignupForm extends Component {
 
   render() {
     return (
-      <section className={styles.section}>
+      <div className={styles.signupForm}>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.handleSubmit}>
           <fieldset>
-            {!this.isFormValid() ? (
-              <legend>Signup Form</legend>
-            ) : (
-              <legend className={styles.isValid}>Signup Form</legend>
-            )}
-            <label htmlFor='name'>Full Name</label>
-            <input
-              id='name'
-              name='name'
-              type='text'
-              value={this.state.name}
-              onChange={this.handleChange}
-            />
+            <legend>Signup Form</legend>
 
-            <label htmlFor='email'>Email</label>
-            <input
-              id='email'
-              name='email'
-              type='email'
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
+            <div className={styles.inputField}>
+              <label htmlFor='name'>Full Name</label>
+              <input id='name' name='name' type='text' value={this.state.name} onChange={this.handleChange} />
+            </div>
 
-            <label htmlFor='password'>Password</label>
-            <input
-              id='password'
-              name='password'
-              type='password'
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
+            <div className={styles.inputField}>
+              <label htmlFor='email'>Email</label>
+              <input id='email' name='email' type='email' value={this.state.email} onChange={this.handleChange} />
+            </div>
 
-            <label htmlFor='passwordConf'>Password Confirmation</label>
-            <input
-              id='passwordConf'
-              name='passwordConf'
-              type='password'
-              value={this.state.passwordConf}
-              onChange={this.handleChange}
-            />
+            <div className={styles.inputField}>
+              <label htmlFor='password'>Password</label>
+              <input
+                id='password'
+                name='password'
+                type='password'
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+            </div>
 
-            <button disabled={!this.isFormValid()} type='submit'>
-              Submit
-            </button>
+            <div className={styles.inputField}>
+              <label htmlFor='passwordConf'>Password Confirmation</label>
+              <input
+                id='passwordConf'
+                name='passwordConf'
+                type='password'
+                value={this.state.passwordConf}
+                onChange={this.handleChange}
+              />
+            </div>
+
+            <div className={styles.signupButton}>
+              <button disabled={!this.isFormValid()} type='submit'>
+                Submit
+              </button>
+            </div>
           </fieldset>
         </form>
-      </section>
+      </div>
     );
   }
 }
