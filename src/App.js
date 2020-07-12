@@ -18,6 +18,7 @@ import GroceryList from './pages/GroceryList/GroceryList';
 import Login from './pages/Login/Login';
 import Photos from './pages/Photos/Photos';
 import Signup from './pages/Signup/Signup';
+import Profile from './pages/Profile/Profile';
 
 // Socket.io
 import openSocket from 'socket.io-client';
@@ -160,12 +161,13 @@ class App extends Component {
             <Route exact path='/calendar' render={() => <Calendar />} />
             <Route exact path='/chat' render={() => <Chat messages={this.state.messages} user={this.state.user} />} />
             <Route exact path='/grocerylist' render={() => <GroceryList />} />
+            <Route exact path='/photos' render={(props) => <Photos />} />
+            <Route exact path='/profile' render={(props) => <Profile />} />
             <Route
               exact
               path='/login'
               render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
             />
-            <Route exact path='/photos' render={(props) => <Photos />} />
             <Route
               exact
               path='/signup'

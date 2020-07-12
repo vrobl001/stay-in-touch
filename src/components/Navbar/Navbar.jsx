@@ -7,8 +7,12 @@ const Navbar = (props) => {
   const conditionalUI = userService.getUser() ? (
     <div className={styles.rightNav}>
       <p>
-        Welcome <span>{props.user.name}</span>!
+        Welcome
+        <Link to='/profile'>
+          <span>{props.user.name}</span>!
+        </Link>
       </p>
+
       <li>
         <Link to='/' onClick={props.handleLogout}>
           Log out

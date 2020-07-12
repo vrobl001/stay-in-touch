@@ -26,10 +26,13 @@
 }
 
 .navbar p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-right: 0.5rem;
 }
 
-.navbar span {
+.navbar p span {
   color: #0052cc;
   margin-left: 0.25rem;
 }

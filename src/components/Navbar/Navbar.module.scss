@@ -33,12 +33,13 @@ $colors: (
   }
 
   p {
+    display: flex;
     margin-right: 0.5rem;
-  }
 
-  span {
-    color: color(dark-blue);
-    margin-left: 0.25rem;
+    span {
+      color: color(dark-blue);
+      margin-left: 0.25rem;
+    }
   }
 
   ul {
