@@ -26,6 +26,7 @@ const socket = openSocket();
 class App extends Component {
   state = {
     messages: [],
+    showSidebar: false,
     user: userService.getUser(),
     webApps: [
       {
@@ -71,6 +72,12 @@ class App extends Component {
     });
   };
 
+  handleShowSidebar = () => {
+    this.setState({
+      showSidebar: !this.state.showSidebar,
+    });
+  };
+
   handleSignupOrLogin = () => {
     this.setState({ user: userService.getUser() }, () => {
       this.handleGetMessages();
@@ -94,10 +101,10 @@ class App extends Component {
     return !this.state.user ? (
       // Protected Routes
       <div className={'app-outer-container'}>
-        <Navbar user={this.state.user} handleLogout={this.handleLogout} />
+        <Navbar user={this.state.user} handleLogout={this.handleLogout} handleShowSidebar={this.handleShowSidebar} />
         <div className='app-inner-container'>
           <div className='sidebar-container'>
-            <Sidebar webApps={this.state.webApps} />
+            <Sidebar webApps={this.state.webApps} showSidebar={this.state.showSidebar} />
           </div>
           <Switch>
             <Route exact path='/' render={() => <Home webApps={this.state.webApps} />} />
@@ -142,10 +149,10 @@ class App extends Component {
       </div>
     ) : (
       <div className={'app-outer-container'}>
-        <Navbar user={this.state.user} handleLogout={this.handleLogout} />
+        <Navbar user={this.state.user} handleLogout={this.handleLogout} handleShowSidebar={this.handleShowSidebar} />
         <div className='app-inner-container'>
           <div className='sidebar-container'>
-            <Sidebar webApps={this.state.webApps} />
+            <Sidebar webApps={this.state.webApps} showSidebar={this.state.showSidebar} />
           </div>
           <Switch>
             <Route exact path='/' render={() => <Home webApps={this.state.webApps} />} />
