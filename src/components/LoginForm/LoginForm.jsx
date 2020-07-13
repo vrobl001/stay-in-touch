@@ -13,15 +13,15 @@ class LoginForm extends Component {
     };
   }
 
-  isFormValid = () => {
-    return this.state.email && this.state.password;
-  };
-
   handleChange = (e) => {
     this.setState({
       error: '',
       [e.target.name]: e.target.value,
     });
+  };
+
+  isFormValid = () => {
+    return this.state.email && this.state.password;
   };
 
   handleSubmit = async (e) => {
@@ -53,20 +53,30 @@ class LoginForm extends Component {
 
             <div className={styles.inputField}>
               <i className='material-icons'>email</i>
+              <input
+                name='email'
+                type='email'
+                value={this.state.email}
+                placeholder='Full Name'
+                onChange={this.handleChange}
+                required
+              />
               <label htmlFor='email'>Email</label>
-              <input id='email' name='email' type='email' value={this.state.email} onChange={this.handleChange} />
             </div>
 
             <div className={styles.inputField}>
-              <label htmlFor='password'>Password</label>
               <i className='material-icons'>lock</i>
               <input
-                id='password'
+                id='signupPassword'
                 name='password'
                 type='password'
-                value={this.state.password}
+                placeholder='Full Name'
+                minLength='8'
                 onChange={this.handleChange}
+                value={this.state.password}
+                required
               />
+              <label htmlFor='password'>Password</label>
             </div>
 
             <div className={styles.loginButton}>
@@ -76,7 +86,7 @@ class LoginForm extends Component {
             </div>
           </fieldset>
         </form>
-        <Link to='signup'>Create account</Link>
+        <Link to='/signup'>Create account</Link>
       </div>
     );
   }
