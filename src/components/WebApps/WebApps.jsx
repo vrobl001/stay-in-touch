@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './WebApps.module.css';
 
 const WebApps = (props) => {
   const allWebApps = props.webApps.map((app, idx) => (
-    <a href={app.link} key={idx}>
+    <Link to={app.link} name={idx} onClick={props.handleActiveApp} key={idx}>
       <div className={styles.webApps}>
         <i className='material-icons'>{app.icon}</i>
         <p>{app.name}</p>
       </div>
-    </a>
+    </Link>
   ));
 
   return <div className={styles.webAppsContainer}>{allWebApps}</div>;
