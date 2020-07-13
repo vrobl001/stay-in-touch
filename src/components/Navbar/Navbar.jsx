@@ -8,13 +8,13 @@ const Navbar = (props) => {
     <div className={styles.rightNav}>
       <p>
         Welcome
-        <Link to='/profile'>
+        <Link to='/profile' onClick={props.handleActiveApp}>
           <span>{props.user.name}</span>!
         </Link>
       </p>
 
       <li>
-        <Link to='/' onClick={props.handleLogout}>
+        <Link to='/login' onClick={props.handleLogout}>
           Log out
         </Link>
       </li>
@@ -32,7 +32,7 @@ const Navbar = (props) => {
         <i className='material-icons' onClick={props.handleShowSidebar}>
           apps
         </i>
-        <Link to='/'>
+        <Link to='/' onClick={props.handleActiveApp}>
           <h1>Stay In Touch</h1>
         </Link>
       </div>
