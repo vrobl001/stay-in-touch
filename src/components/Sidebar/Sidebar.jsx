@@ -12,7 +12,7 @@ const Sidebar = (props) => {
   ));
   return (
     props.showSidebar === true && (
-      <nav id='sidebar' className={styles.sidebarContainer}>
+      <nav className={styles.sidebarContainer}>
         <ul>{sidebarApps}</ul>
       </nav>
     )
