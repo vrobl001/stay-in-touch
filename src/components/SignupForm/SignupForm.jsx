@@ -16,17 +16,22 @@ class SignupForm extends Component {
     };
   }
 
-  isFormValid = () => {
-    return (
-      this.state.name && this.state.email && this.state.password && this.state.password === this.state.passwordConf
-    );
-  };
-
   handleChange = (e) => {
     this.setState({
       error: '',
       ...{ [e.target.name]: e.target.value },
     });
+  };
+
+  handlePasswordMatch = () => {
+    if (this.state.password.length >= 8 && this.state.passwordConf.length >= 8) {
+      if (this.state.password !== this.state.passwordConf) {
+        return this.setState({
+          error: 'Passwords do not match!',
+          passwordConf: '',
+        });
+      }
+    }
   };
 
   handleSubmit = async (e) => {
@@ -50,6 +55,17 @@ class SignupForm extends Component {
     }
   };
 
+  isFormValid = () => {
+    this.handlePasswordMatch();
+    return (
+      this.state.name &&
+      this.state.email &&
+      this.state.password &&
+      this.state.passwordConf &&
+      this.state.password === this.state.passwordConf
+    );
+  };
+
   render() {
     return (
       <div className={styles.signupForm}>
@@ -59,39 +75,59 @@ class SignupForm extends Component {
             <legend>Sign up</legend>
 
             <div className={styles.inputField}>
-              <label htmlFor='name'>Full Name</label>
               <i className='material-icons'>person</i>
-              <input id='name' name='name' type='text' value={this.state.name} onChange={this.handleChange} />
+              <input
+                name='name'
+                type='text'
+                value={this.state.name}
+                placeholder='Name'
+                onChange={this.handleChange}
+                required
+              />
+              <label htmlFor='name'>Name</label>
             </div>
 
             <div className={styles.inputField}>
-              <label htmlFor='email'>Email</label>
               <i className='material-icons'>email</i>
-              <input id='email' name='email' type='email' value={this.state.email} onChange={this.handleChange} />
+              <input
+                name='email'
+                type='email'
+                value={this.state.email}
+                placeholder='Full Name'
+                onChange={this.handleChange}
+                required
+              />
+              <label htmlFor='email'>Email</label>
             </div>
 
             <div className={styles.inputField}>
-              <label htmlFor='password'>Password</label>
               <i className='material-icons'>lock</i>
               <input
-                id='password'
+                id='signupPassword'
                 name='password'
                 type='password'
-                value={this.state.password}
+                placeholder='Full Name'
+                minLength='8'
                 onChange={this.handleChange}
+                value={this.state.password}
+                required
               />
+              <label htmlFor='password'>Password</label>
             </div>
 
             <div className={styles.inputField}>
-              <label htmlFor='passwordConf'>Password Confirmation</label>
               <i className='material-icons'>lock</i>
               <input
-                id='passwordConf'
+                id='signupPasswordConf'
                 name='passwordConf'
                 type='password'
+                placeholder='Full Name'
+                minLength='8'
                 value={this.state.passwordConf}
                 onChange={this.handleChange}
+                required
               />
+              <label htmlFor='passwordConf'>Confirm Password</label>
             </div>
 
             <div className={styles.signupButton}>
@@ -101,7 +137,7 @@ class SignupForm extends Component {
             </div>
           </fieldset>
         </form>
-        <Link to='signup'>Already have account</Link>
+        <Link to='/login'>Already have account</Link>
       </div>
     );
   }
