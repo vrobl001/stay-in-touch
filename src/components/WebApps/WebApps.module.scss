@@ -9,6 +9,7 @@
 
   a {
     color: rgb(0, 82, 204);
+    cursor: pointer;
     text-decoration: none;
   }
 
@@ -35,6 +36,7 @@
     height: 11rem;
     justify-content: center;
     margin: 1rem;
+    pointer-events: none;
     width: 11rem;
 
     i {

@@ -17,6 +17,7 @@
 
 .webAppsContainer a {
   color: #0052cc;
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -46,6 +47,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin: 1rem;
+  pointer-events: none;
   width: 11rem;
 }
 
