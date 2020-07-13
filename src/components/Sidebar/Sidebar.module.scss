@@ -31,7 +31,6 @@
     }
 
     a:hover {
-      background-color: rgba(66, 82, 110, 0.2);
       color: rgb(0, 82, 204);
 
       i {
@@ -39,4 +38,8 @@
       }
     }
   }
+}
+
+.active {
+  background-color: rgba(66, 82, 110, 0.2);
 }

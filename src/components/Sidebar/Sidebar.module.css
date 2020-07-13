@@ -48,11 +48,14 @@
 }
 
 .sidebarContainer ul a:hover {
-  background-color: rgba(66, 82, 110, 0.2);
   color: #0052cc;
 }
 
 .sidebarContainer ul a:hover i {
   color: #0052cc;
+}
+
+.active {
+  background-color: rgba(66, 82, 110, 0.2);
 }
 /*# sourceMappingURL=Sidebar.module.css.map */
