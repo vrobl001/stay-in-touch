@@ -25,37 +25,56 @@ import openSocket from 'socket.io-client';
 const socket = openSocket();
 
 class App extends Component {
-  state = {
-    messages: [],
-    showSidebar: false,
-    user: userService.getUser(),
-    webApps: [
-      {
-        name: 'Address Book',
-        link: '/addressbook',
-        icon: 'contacts',
-      },
-      {
-        name: 'Calendar',
-        link: '/calendar',
-        icon: 'event',
-      },
-      {
-        name: 'Chat',
-        link: '/chat',
-        icon: 'chat',
-      },
-      {
-        name: 'Grocery List',
-        link: '/grocerylist',
-        icon: 'restaurant',
-      },
-      {
-        name: 'Photos',
-        link: '/photos',
-        icon: 'camera_alt',
-      },
-    ],
+  state = this.initialState;
+
+  get initialState() {
+    return {
+      messages: [],
+      showSidebar: false,
+      user: userService.getUser(),
+      webApps: [
+        {
+          name: 'Address Book',
+          link: '/addressbook',
+          icon: 'contacts',
+          active: false,
+        },
+        {
+          name: 'Calendar',
+          link: '/calendar',
+          icon: 'event',
+          active: false,
+        },
+        {
+          name: 'Chat',
+          link: '/chat',
+          icon: 'chat',
+          active: false,
+        },
+        {
+          name: 'Grocery List',
+          link: '/grocerylist',
+          icon: 'restaurant',
+          active: false,
+        },
+        {
+          name: 'Photos',
+          link: '/photos',
+          icon: 'camera_alt',
+          active: false,
+        },
+      ],
+    };
+  }
+
+  handleActiveApp = (e) => {
+    let selectedApp = e.target.name;
+    console.log(selectedApp);
+    this.setState((prevState) => ({
+      webApps: prevState.webApps.map((app, idx) =>
+        idx == selectedApp ? { ...app, active: !app.active } : { ...app, active: false }
+      ),
+    }));
   };
 
   handleGetMessages = async () => {
@@ -67,10 +86,7 @@ class App extends Component {
 
   handleLogout = () => {
     userService.logout();
-    this.setState({
-      messages: [],
-      user: '',
-    });
+    this.setState(this.initialState);
   };
 
   handleShowSidebar = () => {
@@ -92,7 +108,6 @@ class App extends Component {
 
   componentDidMount() {
     this.handleGetMessages();
-
     socket.on('sendMessages', (message) => {
       this.handleUpdateMessages(message);
     });
@@ -150,13 +165,26 @@ class App extends Component {
       </div>
     ) : (
       <div className={'app-outer-container'}>
-        <Navbar user={this.state.user} handleLogout={this.handleLogout} handleShowSidebar={this.handleShowSidebar} />
+        <Navbar
+          user={this.state.user}
+          handleLogout={this.handleLogout}
+          handleShowSidebar={this.handleShowSidebar}
+          handleActiveApp={this.handleActiveApp}
+        />
         <div className='app-inner-container'>
           <div className='sidebar-container'>
-            <Sidebar webApps={this.state.webApps} showSidebar={this.state.showSidebar} />
+            <Sidebar
+              webApps={this.state.webApps}
+              showSidebar={this.state.showSidebar}
+              handleActiveApp={this.handleActiveApp}
+            />
           </div>
           <Switch>
-            <Route exact path='/' render={() => <Home webApps={this.state.webApps} />} />
+            <Route
+              exact
+              path='/'
+              render={() => <Home webApps={this.state.webApps} handleActiveApp={this.handleActiveApp} />}
+            />
             <Route exact path='/addressbook' render={() => <AddressBook />} />
             <Route exact path='/calendar' render={() => <Calendar />} />
             <Route exact path='/chat' render={() => <Chat messages={this.state.messages} user={this.state.user} />} />
