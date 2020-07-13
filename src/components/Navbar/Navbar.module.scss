@@ -1,24 +1,7 @@
-$box-shadow: 0rem 0.1rem 0.25rem 0rem rgb(66, 82, 110);
-
-$colors: (
-  blue: rgb(68, 126, 215),
-  dark-blue: rgb(0, 82, 204),
-  dark-gray: rgb(66, 82, 110),
-  gray: rgb(235, 236, 240),
-  green: rgb(0, 135, 90),
-  light-gray: rgb(244, 245, 247),
-  purple: rgb(82, 68, 171),
-  white: rgb(255, 255, 255),
-);
-
-@function color($color-name) {
-  @return map-get($colors, $color-name);
-}
-
 .navbar {
-  background-color: color(white);
-  border-bottom: 1px solid color(light-gray);
-  box-shadow: $box-shadow;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(244, 245, 247);
+  box-shadow: 0rem 0.1rem 0.25rem 0rem rgb(66, 82, 110);
   display: flex;
   justify-content: space-between;
   z-index: 1;
@@ -26,7 +9,7 @@ $colors: (
   a,
   ul {
     align-items: center;
-    color: color(dark-gray);
+    color: rgb(66, 82, 110);
     display: flex;
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
@@ -37,7 +20,7 @@ $colors: (
     margin-right: 0.5rem;
 
     span {
-      color: color(dark-blue);
+      color: rgb(0, 82, 204);
       margin-left: 0.25rem;
     }
   }
@@ -54,7 +37,7 @@ $colors: (
 
     a {
       align-items: center;
-      color: color(blue);
+      color: rgb(68, 126, 215);
       display: flex;
       font-family: 'Marcellus SC', serif;
       padding: 0;
@@ -86,7 +69,7 @@ $colors: (
       padding: 0 1rem;
     }
     li:hover {
-      background-color: color(light-gray);
+      background-color: rgb(244, 245, 247);
     }
   }
 }

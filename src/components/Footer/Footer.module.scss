@@ -1,23 +1,8 @@
-$colors: (
-  blue: rgb(68, 126, 215),
-  dark-blue: rgb(0, 82, 204),
-  dark-gray: rgb(66, 82, 110),
-  gray: rgb(235, 236, 240),
-  green: rgb(0, 135, 90),
-  light-gray: rgb(244, 245, 247),
-  purple: rgb(82, 68, 171),
-  white: rgb(255, 255, 255),
-);
-
-@function color($color-name) {
-  @return map-get($colors, $color-name);
-}
-
 .footer {
   align-items: center;
-  background-color: color(white);
-  border-top: 1px solid color(light-gray);
-  color: color(dark-gray);
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid rgb(244, 245, 247);
+  color: rgb(66, 82, 110);
   display: flex;
   justify-content: center;
 
