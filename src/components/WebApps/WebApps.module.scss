@@ -1,10 +1,9 @@
 .webAppsContainer {
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
+  flex-grow: 1;
   justify-content: center;
   margin: 10rem auto;
-  width: 80rem;
 
   a {
     color: rgb(0, 82, 204);
