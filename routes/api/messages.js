@@ -3,8 +3,8 @@ const msgsCtrl = require('../../controllers/messages');
 
 router.use(require('../../config/auth'));
 
-router.post('/chat', isAuthenticated, msgsCtrl.sendMessages);
-router.get('/chat', isAuthenticated, msgsCtrl.retrieveMessages);
+router.post('/', isAuthenticated, msgsCtrl.sendMessages);
+router.get('/', isAuthenticated, msgsCtrl.retrieveMessages);
 
 function isAuthenticated(req, res, next) {
   if (req.user) return next();
