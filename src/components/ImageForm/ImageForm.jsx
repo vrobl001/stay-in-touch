@@ -1,63 +1,73 @@
-import React, { Component } from 'react';
-import userService from '../../utils/userService';
+import React from 'react';
+import imageService from '../../utils/imageService';
 import styles from './ImageForm.module.css';
 
-class ImageForm extends Component {
-  state = this.getInitialState();
-  getInitialState() {
+class ImageForm extends React.Component {
+  state = this.initialState;
+
+  get initialState() {
     return {
-      image: '',
-      error: '',
+      imageURL: null,
+      imageAlt: null,
     };
   }
 
-  handleChange = (e) => {
-    this.setState({
-      error: '',
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  isFormValid = () => {
-    return this.state.image;
-  };
-
   handleSubmit = async (e) => {
     e.preventDefault();
-    if (!this.isFormValid()) return;
     try {
-      const { image } = this.state;
-      await userService.login({ image });
-      this.setState(this.getInitialState(), () => {
-        this.props.handleSignupOrLogin();
-        this.props.history.push('/');
-      });
+      const { imageURL, imageAlt } = this.state;
+      await imageService.sendImages({ imageURL, imageAlt });
+      this.setState(this.initialState);
     } catch (error) {
-      this.setState({
-        image: '',
-        error: error.message,
-      });
+      this.setState(this.initialState);
     }
   };
 
-  render() {
-    return (
-      <div>
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.handleSubmit}>
-          <fieldset>
-            <legend>Upload Image</legend>
+  handleImageUpload = () => {
+    const { files } = document.querySelector('input[type="file"]');
+    const formData = new FormData();
+    formData.append('file', files[0]);
+    formData.append('upload_preset', 'ci4viyep');
+    const options = {
+      method: 'POST',
+      body: formData,
+    };
+    return fetch('https://api.Cloudinary.com/v1_1/stay-in-touch/image/upload', options)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log('res.json ', res.secure_url);
+        console.log('res.json ', res.secure_url);
+        this.setState({
+          imageURL: res.secure_url,
+          imageAlt: `An image of ${res.original_filename}`,
+        });
+      })
+      .catch((err) => console.log(err));
+  };
 
-            <div>
-              <input name='image' type='file' value={this.state.image} onChange={this.handleChange} required />
-              <label htmlFor='image'>Image</label>
+  render() {
+    const { imageURL, imageAlt } = this.state;
+
+    return (
+      <main className='App'>
+        <section className='left-side'>
+          <form>
+            <div className='form-group'>
+              <input type='file' />
             </div>
-            <button disabled={!this.isFormValid()} type='submit'>
+
+            <button type='button' className='btn' onClick={this.handleImageUpload}>
               Upload
             </button>
-          </fieldset>
-        </form>
-      </div>
+            <button type='button' className='btn' onClick={this.handleSubmit}>
+              Save Image
+            </button>
+          </form>
+        </section>
+        <section className='right-side'>
+          {imageURL && <img src={imageURL} alt={imageAlt} className='displayed-image' />}
+        </section>
+      </main>
     );
   }
 }

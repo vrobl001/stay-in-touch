@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const imgsCtrl = require('../../controllers/messages');
+const imgsCtrl = require('../../controllers/images');
 
-router.post('/', imgsCtrl.sendMessages);
-router.get('/', imgsCtrl.retrieveMessages);
+router.post('/', imgsCtrl.sendImages);
+router.get('/', imgsCtrl.retrieveImages);
 
 module.exports = router;

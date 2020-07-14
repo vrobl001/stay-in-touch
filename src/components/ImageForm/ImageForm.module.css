@@ -1,1 +1,94 @@
-/* No CSS *//*# sourceMappingURL=ImageForm.module.css.map */
+.app {
+  text-align: center;
+  max-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app .leftSide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-right: 0.5px solid grey;
+}
+
+.app .rightSide {
+  border-left: 0.5px solid grey;
+}
+
+.app .leftSide,
+.app .rightSide {
+  height: 300px;
+  width: 100%;
+}
+
+.app .leftSide form {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: white;
+  border: 1px solid grey;
+  border-radius: 4px;
+  width: 300px;
+  padding: 40px 10px;
+}
+
+.app .leftSide form input {
+  margin: 0 0 30px;
+  width: 200px;
+}
+
+.app .leftSide form .btn {
+  height: 40px;
+  width: 200px;
+  background: white;
+  border: 1px solid grey;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.app .leftSide form .btn:hover {
+  color: white;
+  background: grey;
+}
+
+.app .leftSide form .btn:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+
+.app .leftSide form .btn.widget-btn {
+  margin-top: 15px;
+  background: #800080;
+  border: 1px solid #800080;
+  color: #ffffff;
+}
+
+.app .leftSide form .btn.widget-btn:hover {
+  margin-top: 15px;
+  background: #4b0082;
+  border: 1px solid #4b0082;
+  color: #ffffff;
+}
+
+.app .rightSide .displayedImage {
+  height: 300px;
+  width: 300px;
+}
+/*# sourceMappingURL=ImageForm.module.css.map */

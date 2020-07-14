@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import messageService from './utils/messageService';
 import userService from './utils/userService';
+import messageService from './utils/messageService';
+import imageService from './utils/imageService';
 import './App.css';
 
 // Reusable Components
@@ -30,6 +31,7 @@ class App extends Component {
   get initialState() {
     return {
       messages: [],
+      images: [],
       showSidebar: false,
       user: userService.getUser(),
       webApps: [
@@ -69,10 +71,9 @@ class App extends Component {
 
   handleActiveApp = (e) => {
     let selectedApp = e.target.name;
-    console.log(selectedApp);
     this.setState((prevState) => ({
       webApps: prevState.webApps.map((app, idx) =>
-        idx == selectedApp ? { ...app, active: !app.active } : { ...app, active: false }
+        idx.toString() === selectedApp ? { ...app, active: !app.active } : { ...app, active: false }
       ),
     }));
   };
@@ -81,6 +82,13 @@ class App extends Component {
     if (userService.getUser()) {
       const allMessages = await messageService.retrieveMessages();
       this.setState({ messages: allMessages });
+    }
+  };
+
+  handleGetImages = async () => {
+    if (userService.getUser()) {
+      const allImages = await imageService.retrieveImages();
+      this.setState({ images: allImages });
     }
   };
 
@@ -108,6 +116,7 @@ class App extends Component {
 
   componentDidMount() {
     this.handleGetMessages();
+    this.handleGetImages();
     socket.on('sendMessages', (message) => {
       this.handleUpdateMessages(message);
     });
@@ -158,7 +167,11 @@ class App extends Component {
               path='/grocerylist'
               render={() => (this.state.user ? <GroceryList /> : <Redirect to='/login' />)}
             />
-            <Route exact path='/photos' render={(props) => (this.state.user ? <Photos /> : <Redirect to='/login' />)} />
+            <Route
+              exact
+              path='/photos'
+              render={(props) => (this.state.user ? <Photos images={this.state.images} /> : <Redirect to='/login' />)}
+            />
             <Route exact path='/profile' render={(props) => <Profile />} />
             <Route
               exact
