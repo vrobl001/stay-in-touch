@@ -24,7 +24,7 @@ class SignupForm extends Component {
   };
 
   handlePasswordMatch = () => {
-    if (this.state.password.length >= 8 && this.state.passwordConf.length >= 8) {
+    if (this.state.password.length >= 8 && this.state.passwordConf.length === this.state.password.length) {
       if (this.state.password !== this.state.passwordConf) {
         return this.setState({
           error: 'Passwords do not match!',
