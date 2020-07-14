@@ -1,5 +1,5 @@
 import tokenService from './tokenService';
-const BASE_URL = '/api/messages/chat';
+const BASE_URL = '/api/messages/';
 
 function sendMessages(message) {
   return fetch(BASE_URL, {
