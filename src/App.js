@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import messageService from './utils/messageService';
 import userService from './utils/userService';
 import './App.css';
@@ -114,56 +114,7 @@ class App extends Component {
   }
 
   render() {
-    return !this.state.user ? (
-      // Protected Routes
-      <div className={'app-outer-container'}>
-        <Navbar user={this.state.user} handleLogout={this.handleLogout} handleShowSidebar={this.handleShowSidebar} />
-        <div className='app-inner-container'>
-          <div className='sidebar-container'>
-            <Sidebar webApps={this.state.webApps} showSidebar={this.state.showSidebar} />
-          </div>
-          <Switch>
-            <Route exact path='/' render={() => <Home webApps={this.state.webApps} />} />
-            <Route
-              exact
-              path='/addressbook'
-              render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
-            />
-            <Route
-              exact
-              path='/calendar'
-              render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
-            />
-            <Route
-              exact
-              path='/chat'
-              render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
-            />
-            <Route
-              exact
-              path='/grocerylist'
-              render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
-            />
-            <Route
-              exact
-              path='/photos'
-              render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
-            />
-            <Route
-              exact
-              path='/login'
-              render={(props) => <Login {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
-            />
-            <Route
-              exact
-              path='/signup'
-              render={(props) => <Signup {...props} handleSignupOrLogin={this.handleSignupOrLogin} />}
-            />
-          </Switch>
-        </div>
-        <Footer />
-      </div>
-    ) : (
+    return (
       <div className={'app-outer-container'}>
         <Navbar
           user={this.state.user}
@@ -185,11 +136,29 @@ class App extends Component {
               path='/'
               render={() => <Home webApps={this.state.webApps} handleActiveApp={this.handleActiveApp} />}
             />
-            <Route exact path='/addressbook' render={() => <AddressBook />} />
-            <Route exact path='/calendar' render={() => <Calendar />} />
-            <Route exact path='/chat' render={() => <Chat messages={this.state.messages} user={this.state.user} />} />
-            <Route exact path='/grocerylist' render={() => <GroceryList />} />
-            <Route exact path='/photos' render={(props) => <Photos />} />
+            <Route
+              exact
+              path='/addressbook'
+              render={() => (this.state.user ? <AddressBook /> : <Redirect to='/login' />)}
+            />
+            <Route exact path='/calendar' render={() => (this.state.user ? <Calendar /> : <Redirect to='/login' />)} />
+            <Route
+              exact
+              path='/chat'
+              render={() =>
+                this.state.user ? (
+                  <Chat messages={this.state.messages} user={this.state.user} />
+                ) : (
+                  <Redirect to='/login' />
+                )
+              }
+            />
+            <Route
+              exact
+              path='/grocerylist'
+              render={() => (this.state.user ? <GroceryList /> : <Redirect to='/login' />)}
+            />
+            <Route exact path='/photos' render={(props) => (this.state.user ? <Photos /> : <Redirect to='/login' />)} />
             <Route exact path='/profile' render={(props) => <Profile />} />
             <Route
               exact
