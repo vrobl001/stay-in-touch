@@ -30,7 +30,7 @@ const Navbar = (props) => {
     <nav className={styles.navbar}>
       <div className={styles.logo}>
         <i className='material-icons' onClick={props.handleShowSidebar}>
-          apps
+          menu
         </i>
         <Link to='/' onClick={props.handleActiveApp}>
           <h1>Stay In Touch</h1>
