@@ -1,4 +1,6 @@
 import tokenService from './tokenService';
+import openSocket from 'socket.io-client';
+const socket = openSocket();
 const BASE_URL = '/api/images';
 
 function uploadImages() {
@@ -6,14 +8,22 @@ function uploadImages() {
   const formData = new FormData();
   formData.append('file', files[0]);
   formData.append('upload_preset', 'ci4viyep');
-  const options = {
+  return fetch('https://api.Cloudinary.com/v1_1/stay-in-touch/image/upload', {
     method: 'POST',
     body: formData,
-  };
-  return fetch('https://api.Cloudinary.com/v1_1/stay-in-touch/image/upload', options)
-    .then((res) => res.json())
-    .then((res) => {
-      console.log('res.json ', res.json());
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('could not upload image');
+      }
+    })
+    .then((response) => {
+      const imageURL = response.secure_url;
+      const imageAlt = response.original_filename;
+      socket.emit('sendImages', { imageURL, imageAlt });
+      sendImages({ imageURL, imageAlt });
     })
     .catch((err) => console.log(err));
 }
