@@ -25,7 +25,7 @@ import Profile from './pages/Profile/Profile';
 import openSocket from 'socket.io-client';
 const socket = openSocket();
 
-class App extends Component {
+export default class App extends Component {
   state = this.initialState;
 
   get initialState() {
@@ -201,5 +201,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
