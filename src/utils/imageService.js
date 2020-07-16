@@ -24,8 +24,7 @@ function uploadImages() {
       const imageAlt = response.original_filename;
       socket.emit('sendImages', { imageURL, imageAlt });
       sendImages({ imageURL, imageAlt });
-    })
-    .catch((err) => console.log(err));
+    });
 }
 
 function sendImages(image) {
