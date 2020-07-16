@@ -16,7 +16,7 @@ function sendMessages(message) {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error('could not send message');
+        throw new Error('Could not send message!');
       }
     })
     .then(() => {
@@ -38,7 +38,7 @@ function retrieveMessages() {
     if (response.ok) {
       return response.json();
     } else {
-      throw new Error('could not retrieve message');
+      throw new Error('Could not retrieve message!');
     }
   });
 }

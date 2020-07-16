@@ -12,7 +12,7 @@ function login(creds) {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error('Incorrect email/password!');
+        throw new Error('Incorrect log in info!');
       }
     })
     .then(({ token }) => tokenService.setToken(token));
@@ -36,7 +36,7 @@ function signup(user) {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error('Email Already Taken!');
+        throw new Error('Email already taken!');
       }
     })
     .then(({ token }) => tokenService.setToken(token));
