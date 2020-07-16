@@ -26,7 +26,6 @@ class SendMessages extends Component {
       if (!this.isMessageValid()) return;
       try {
         const { name, msg } = this.state;
-        socket.emit('sendMessages', { name, msg });
         await messageService.sendMessages({ name, msg });
         this.setState(this.getInitialState);
       } catch (error) {
