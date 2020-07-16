@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import userService from './utils/userService';
-import messageService from './utils/messageService';
 import imageService from './utils/imageService';
+import messageService from './utils/messageService';
 import './App.css';
 
 // Reusable Components
@@ -17,7 +17,7 @@ import Calendar from './pages/Calendar/Calendar';
 import Chat from './pages/Chat/Chat';
 import GroceryList from './pages/GroceryList/GroceryList';
 import Login from './pages/Login/Login';
-import Photos from './pages/Photos/Photos';
+import Images from './pages/Images/Images';
 import Signup from './pages/Signup/Signup';
 import Profile from './pages/Profile/Profile';
 
@@ -60,8 +60,8 @@ class App extends Component {
           active: false,
         },
         {
-          name: 'Photos',
-          link: '/photos',
+          name: 'Images',
+          link: '/images',
           icon: 'camera_alt',
           active: false,
         },
@@ -78,17 +78,19 @@ class App extends Component {
     }));
   };
 
-  handleGetMessages = async () => {
-    if (userService.getUser()) {
-      const allMessages = await messageService.retrieveMessages();
-      this.setState({ messages: allMessages });
-    }
-  };
-
   handleGetImages = async () => {
     if (userService.getUser()) {
       const allImages = await imageService.retrieveImages();
+      console.log('all images ', allImages);
       this.setState({ images: allImages });
+    }
+  };
+
+  handleGetMessages = async () => {
+    if (userService.getUser()) {
+      const allMessages = await messageService.retrieveMessages();
+      console.log('all messages ', allMessages);
+      this.setState({ messages: allMessages });
     }
   };
 
@@ -106,7 +108,13 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({ user: userService.getUser() }, () => {
       this.handleGetMessages();
+      this.handleGetImages();
     });
+  };
+
+  handleUpdateImages = (image) => {
+    const imagesCopy = [...this.state.images, image];
+    this.setState({ images: imagesCopy });
   };
 
   handleUpdateMessages = (message) => {
@@ -115,8 +123,11 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.handleGetMessages();
     this.handleGetImages();
+    this.handleGetMessages();
+    socket.on('sendImages', (image) => {
+      this.handleUpdateImages(image);
+    });
     socket.on('sendMessages', (message) => {
       this.handleUpdateMessages(message);
     });
@@ -169,8 +180,8 @@ class App extends Component {
             />
             <Route
               exact
-              path='/photos'
-              render={(props) => (this.state.user ? <Photos images={this.state.images} /> : <Redirect to='/login' />)}
+              path='/images'
+              render={(props) => (this.state.user ? <Images images={this.state.images} /> : <Redirect to='/login' />)}
             />
             <Route exact path='/profile' render={(props) => <Profile />} />
             <Route
