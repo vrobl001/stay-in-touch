@@ -1,63 +1,61 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import messageService from '../../../utils/messageService';
 import styles from './SendMessages.module.css';
-import openSocket from 'socket.io-client';
-const socket = openSocket();
 
-class SendMessages extends Component {
-  state = this.getInitialState();
+const SendMessages = (props) => {
+  const [form, setState] = useState({
+    name: props.user.name,
+    msg: '',
+  });
 
-  getInitialState() {
-    return {
-      name: this.props.user.name,
+  const initialState = () => {
+    setState({
+      ...form,
+      name: props.user.name,
       msg: '',
-    };
-  }
+    });
+  };
 
-  handleChange = (e) => {
-    this.setState({
+  const handleChange = (e) => {
+    setState({
+      ...form,
       [e.target.name]: e.target.value,
     });
   };
 
-  handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      if (!this.isMessageValid()) return;
+      if (!isMessageValid()) return;
       try {
-        const { name, msg } = this.state;
+        const { name, msg } = form;
         await messageService.sendMessages({ name, msg });
-        this.setState(this.getInitialState);
+        initialState();
       } catch (error) {
-        this.setState({
-          name: this.props.user.name,
-          msg: '',
-        });
+        initialState();
       }
     }
   };
 
-  isMessageValid = () => {
-    return this.state.name && this.state.msg;
+  const isMessageValid = () => {
+    return form.name && form.msg;
   };
 
-  render() {
-    return (
-      <div className={styles.sendMessageContainer}>
-        <form className={styles.formContainer}>
-          <textarea
-            onKeyPress={this.handleSubmit}
-            className={styles.textArea}
-            id='msg'
-            name='msg'
-            type='text'
-            value={this.state.msg}
-            onChange={this.handleChange}
-          />
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div className={styles.sendMessageContainer}>
+      <form className={styles.formContainer}>
+        <textarea
+          onKeyPress={handleSubmit}
+          className={styles.textArea}
+          id='msg'
+          name='msg'
+          type='text'
+          value={form.msg}
+          onChange={handleChange}
+        />
+      </form>
+    </div>
+  );
+};
 
 export default SendMessages;
