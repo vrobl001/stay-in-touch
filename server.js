@@ -9,6 +9,9 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
 io.on('connection', (socket) => {
+  socket.on('sendImages', (image) => {
+    io.emit('sendImages', image);
+  });
   socket.on('sendMessages', (messages) => {
     io.emit('sendMessages', messages);
   });
@@ -25,8 +28,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(require('./config/auth'));
 app.use('/api/users', require('./routes/api/users'));
-app.use('/api/messages', require('./routes/api/messages'));
 app.use('/api/images', require('./routes/api/images'));
+app.use('/api/messages', require('./routes/api/messages'));
 
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
