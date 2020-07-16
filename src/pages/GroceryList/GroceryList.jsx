@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './GroceryList.module.css';
 
-const GroceryList = (props) => {
+export default function GroceryList(props) {
   return (
     <main>
       <div>
@@ -9,6 +9,4 @@ const GroceryList = (props) => {
       </div>
     </main>
   );
-};
-
-export default GroceryList;
+}

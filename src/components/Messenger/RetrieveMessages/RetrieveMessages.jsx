@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './RetrieveMessages.module.css';
 
-const RetrieveMessages = (props) => {
+export default function RetrieveMessages(props) {
   const messages = props.messages.map((message, idx) =>
     props.user.name === message.name ? (
       <div className={styles.userMessageContainer} key={idx}>
@@ -24,6 +24,4 @@ const RetrieveMessages = (props) => {
       <div className={styles.retrieveMessageInnerContainer}>{messages}</div>
     </div>
   );
-};
-
-export default RetrieveMessages;
+}

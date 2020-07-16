@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './AddressBook.module.css';
 
-const AddressBook = (props) => {
+export default function AddressBook(props) {
   return (
     <main>
       <div>
@@ -9,6 +9,4 @@ const AddressBook = (props) => {
       </div>
     </main>
   );
-};
-
-export default AddressBook;
+}

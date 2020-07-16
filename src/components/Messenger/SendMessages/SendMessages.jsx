@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import messageService from '../../../utils/messageService';
 import styles from './SendMessages.module.css';
 
-const SendMessages = (props) => {
+export default function SendMessages(props) {
   const [form, setState] = useState({
     name: props.user.name,
     msg: '',
@@ -56,6 +56,4 @@ const SendMessages = (props) => {
       </form>
     </div>
   );
-};
-
-export default SendMessages;
+}

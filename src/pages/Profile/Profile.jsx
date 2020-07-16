@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Profile.module.css';
 
-const Profile = (props) => {
+export default function Profile(props) {
   return (
     <main>
       <div>
@@ -9,6 +9,4 @@ const Profile = (props) => {
       </div>
     </main>
   );
-};
-
-export default Profile;
+}

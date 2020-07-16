@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Calendar.module.css';
 
-const Calendar = (props) => {
+export default function Calendar(props) {
   return (
     <main>
       <div>
@@ -9,6 +9,4 @@ const Calendar = (props) => {
       </div>
     </main>
   );
-};
-
-export default Calendar;
+}

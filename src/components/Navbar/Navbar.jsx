@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import userService from '../../utils/userService';
 import styles from './Navbar.module.css';
 
-const Navbar = (props) => {
+export default function Navbar(props) {
   const conditionalUI = userService.getUser() ? (
     <div className={styles.rightNav}>
       <p>
@@ -39,6 +39,4 @@ const Navbar = (props) => {
       <ul>{conditionalUI}</ul>
     </nav>
   );
-};
-
-export default Navbar;
+}

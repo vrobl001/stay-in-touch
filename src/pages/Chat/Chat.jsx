@@ -3,7 +3,7 @@ import RetrieveMessages from '../../components/Messenger/RetrieveMessages/Retrie
 import SendMessages from '../../components/Messenger/SendMessages/SendMessages';
 import styles from './Chat.module.css';
 
-const Chat = (props) => {
+export default function Chat(props) {
   return (
     <div className={styles.chatOuterContainer}>
       <div className={styles.chatInnerContainer}>
@@ -12,6 +12,4 @@ const Chat = (props) => {
       </div>
     </div>
   );
-};
-
-export default Chat;
+}

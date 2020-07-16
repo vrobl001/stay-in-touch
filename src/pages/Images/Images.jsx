@@ -2,7 +2,7 @@ import React from 'react';
 import ImageForm from '../../components/ImageForm/ImageForm';
 import styles from './Images.module.css';
 
-const Images = (props) => {
+export default function Images(props) {
   const images = props.images.map((image, idx) => (
     <div key={idx}>
       <img src={image.imageURL} alt={image.imageAlt}></img>
@@ -15,6 +15,4 @@ const Images = (props) => {
       <div>{images}</div>
     </div>
   );
-};
-
-export default Images;
+}
